@@ -36,8 +36,8 @@ class UsuarioDAO {
                 $_SESSION['nome']   = $rows[0][nome];
                 $_SESSION['admin']  = $rows[0][admin_site];
                 $_SESSION['id']     = $rows[0][id];
-                echo "Bem-vindo, {$_SESSION['nome']}<br>";
-                echo "Seu id é: {$_SESSION['id']}";
+                $_SESSION['logged'] = true;
+                header('Location: ./../../views/home.php');
             } else {
                 /* message temporária */
                 echo "Dados inválidos";
