@@ -30,3 +30,33 @@ body{
     vertical-align: middle;
     width: 300px;
 }
+
+.btn-link{
+    color: white !important;
+}
+.btn-link:hover{
+    color: white;
+    font-weight: 700;
+    text-decoration: none;
+}
+.btn-link:focus{
+    color: white;
+    font-weight: 700;
+    text-decoration: none;
+}
+.btn-link:active{
+    color: white;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.profile img {
+    width: 50px;
+    border-radius: 50%;
+}
+
+.card:hover{
+    border-color: #00554f;
+    color: #00554f;
+    transition: color .15s ease-in-out, border-color .15s ease-in-out;
+}
