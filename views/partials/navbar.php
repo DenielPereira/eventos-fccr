@@ -10,14 +10,30 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="nav navbar-nav mr-auto justify-content-center">
             <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="./../views/index.php">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Eventos</a>
+                <a class="nav-link" href="./../views/eventos.php">Eventos</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">Check-ins</a>
             </li>
+            <?php
+
+            if ($_SESSION['admin'] == 1){
+               ?> 
+                    <li class="nav-item">
+                        <a class="nav-link" href="./../views/users.php">Gerenciar Usuários</a>
+                    </li>                                 
+                <?php
+
+            }else{
+                ?> 
+                <!-- nada --> 
+                <?php
+            }
+                ?>
+            
         </ul>
         <div class="profile form-inline">
             <div class="dropdown">
@@ -32,7 +48,15 @@
                     <a class="dropdown-item" href="./../src/controllers/logout.php">Sair</a>
                 </div>
             </div>
-            <img src="https://www.w3schools.com/howto/img_avatar.png" class="ml-1">
+            <?php
+
+            if ($_SESSION['sexo'] == 'M'){
+               ?> <img src="https://www.w3schools.com/howto/img_avatar.png" class="ml-1"> <?php
+            }else{
+               ?> <img src="https://www.w3schools.com/howto/img_avatar2.png" class="ml-1"> <?php
+            }
+            
+            ?>
         </div>
     </div>
 </nav>

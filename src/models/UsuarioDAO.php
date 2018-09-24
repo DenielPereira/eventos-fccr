@@ -16,7 +16,7 @@ class UsuarioDAO {
             $senha      = $_usuario->getSenha();
             $admin      = $_usuario->getAdmin();
 
-            $sql = "INSERT INTO usuarios (nome, sobrenome, email, senha, admin_site)
+            $sql = "INSERT INTO usuario (nome, sobrenome, email, senha, admin)
                 VALUES ('$nome', '$sobrenome', '$email', '$senha', '$admin')";
             $this->_conexaoDB->exec($sql);
         } catch(PDOException $e) {
@@ -26,7 +26,7 @@ class UsuarioDAO {
 
     public function login($email, $senha) {
         try {
-            $sql = "SELECT nome, sobrenome, id, admin_site FROM usuarios
+            $sql = "SELECT nome, sobrenome, sexo, nascimento, id, admin FROM usuario
             WHERE email = '$email' AND senha = '$senha'";
             $result = $this->_conexaoDB->query($sql);
             $rows = $result->fetchAll();
@@ -35,7 +35,9 @@ class UsuarioDAO {
                 session_start();
                 $_SESSION['nome']   = $rows[0][nome];
                 $_SESSION['sobrenome']   = $rows[0][sobrenome];
-                $_SESSION['admin']  = $rows[0][admin_site];
+                $_SESSION['sexo']   = $rows[0][sexo];
+                $_SESSION['admin']  = $rows[0][admin];
+                $_SESSION['nascimento']  = $rows[0][nascimento];
                 $_SESSION['id']     = $rows[0][id];
                 $_SESSION['logged'] = true;
                 header('Location: ./../../views/home.php');

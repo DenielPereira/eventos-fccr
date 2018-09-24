@@ -13,8 +13,8 @@
     <?php include './partials/navbar.php';?>
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
-            <h1 class="display-4">Olá
-                <?php echo $_SESSION['nome']; ?>!</h1>
+            <h1 class="display-4">Bem vindo,
+                <?php echo $_SESSION['nome']; ?>.</h1>
             <p class="lead">Essa é a sua home page, e abaixo estão as ações que você pode realizar.</p>
         </div>
     </div>

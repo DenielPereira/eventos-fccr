@@ -3,7 +3,7 @@
 class Database extends PDO {
     private $string_connect = "mysql:host=127.0.0.1;dbname=eventos_fccr";
     private $username = "root";
-    private $pass = "root";
+    private $pass = "";
     private $options = array(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     private $conexao;
 
