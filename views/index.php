@@ -1,3 +1,9 @@
+<?php 
+    session_start();
+    if(isset($_SESSION['logged']) && $_SESSION['logged']) {
+     header('Location: ./home.php');
+    }
+?>
 <!DOCTYPE html>
 <html>
 

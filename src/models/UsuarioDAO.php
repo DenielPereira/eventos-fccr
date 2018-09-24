@@ -41,7 +41,7 @@ class UsuarioDAO {
                 header('Location: ./../../views/home.php');
             } else {
                 /* message temporária */
-                echo "Dados inválidos";
+                echo "<script>alert('Dados invalidos')</script>";
             }
         } catch(PDOException $e) {
             echo "Falha: {$e}";
