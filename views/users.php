@@ -1,6 +1,8 @@
 <?php 
     session_start(); 
     if(!$_SESSION['logged']) header('Location: ./index.php');
+
+    include_once("./../src/controllers/variables.php");
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">

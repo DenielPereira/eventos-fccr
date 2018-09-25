@@ -11,10 +11,10 @@
 </head>
 <body>
     <?php include './partials/navbar.php';?>
-     <div class="jumbotron jumbotron-fluid">
+    <div class="jumbotron jumbotron-fluid">
         <div class="container">
-            <h1 class="display-4">Eventos</h1>
-            <p class="lead">Esses são os eventos que estão acontecendo.</p>
+            <h1 class="display-4">Check-ins</h1>
+            <p class="lead">Aqui você vai encontrar os eventos que você deu check-in.</p>
         </div>
     </div>
     <div class="px-5 mt-auto">
@@ -32,7 +32,7 @@
             <tbody>
                 <tr>
                     <th scope="row">1</th>
-                    <td><a href="./../views/evento.php">Lorem tempor incididunt aliquip ea labore.</a></td>
+                    <td>Lorem tempor incididunt aliquip ea labore.</td>
                     <td></td>
                     <td></td>
                     <td></td>
@@ -54,17 +54,10 @@
                     <td></td>
                     <td>Beltrano</td>
                 </tr>
-            <?php
-
-                if ($_SESSION['admin'] == 1){ 
-                   include './partials/tr_admin.php';
-                } 
-
-            ?>            
             </tbody>
         </table>
     </div>
 
 </body>
-
+    <?php include './partials/scripts.php';?>
 </html>

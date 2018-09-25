@@ -16,7 +16,7 @@
                 <a class="nav-link" href="./../views/eventos.php">Eventos</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Check-ins</a>
+                <a class="nav-link" href="./../views/checkins.php">Check-ins</a>
             </li>
             <?php
 
@@ -39,7 +39,7 @@
             <div class="dropdown">
                 <button class="btn btn-link dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false">
-                    <?php echo $_SESSION['nome'] . " " . $_SESSION['sobrenome'];?>
+                    <?php echo $name . " " . $lastname;?>
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                     <h6 class="dropdown-header">Perfil</h6>

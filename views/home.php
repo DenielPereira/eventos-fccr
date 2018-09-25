@@ -1,6 +1,8 @@
 <?php 
     session_start(); 
     if(!$_SESSION['logged']) header('Location: ./index.php');
+
+    include_once("./../src/controllers/variables.php");
 ?>
 <!DOCTYPE html>
 <html>
@@ -13,8 +15,18 @@
     <?php include './partials/navbar.php';?>
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
-            <h1 class="display-4">Bem vindo,
-                <?php echo $_SESSION['nome']; ?>.</h1>
+            <h1 class="display-4">
+                <?php 
+
+                if($_SESSION['sexo'] == 'M'){
+                    echo $man;
+                }else{
+                    echo $woman;
+                }
+                    echo $name; 
+
+                ?>.
+            </h1>
             <p class="lead">Essa é a sua home page, e abaixo estão as ações que você pode realizar.</p>
         </div>
     </div>
