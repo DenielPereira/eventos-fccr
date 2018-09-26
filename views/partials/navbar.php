@@ -18,22 +18,11 @@
             <li class="nav-item">
                 <a class="nav-link" href="./../views/checkins.php">Check-ins</a>
             </li>
-            <?php
-
-            if ($_SESSION['admin'] == 1){
-               ?> 
+            <? if($_SESSION['admin'] == 1): ?>
                     <li class="nav-item">
                         <a class="nav-link" href="./../views/users.php">Gerenciar Usuários</a>
-                    </li>                                 
-                <?php
-
-            }else{
-                ?> 
-                <!-- nada --> 
-                <?php
-            }
-                ?>
-            
+                    </li>                      
+            <? endif; ?>
         </ul>
         <div class="profile form-inline">
             <div class="dropdown">
@@ -48,15 +37,12 @@
                     <a class="dropdown-item" href="./../src/controllers/logout.php">Sair</a>
                 </div>
             </div>
-            <?php
 
-            if ($_SESSION['sexo'] == 'M'){
-               ?> <img src="https://www.w3schools.com/howto/img_avatar.png" class="ml-1"> <?php
-            }else{
-               ?> <img src="https://www.w3schools.com/howto/img_avatar2.png" class="ml-1"> <?php
-            }
-            
-            ?>
+            <?php if($_SESSION['sexo'] == 'M' || 'm'): ?> 
+                <img src="https://www.w3schools.com/howto/img_avatar.png" class="ml-1"> 
+            <?php else: ?>
+                <img src="https://www.w3schools.com/howto/img_avatar2.png" class="ml-1">
+            <?php endif; ?>      
         </div>
     </div>
 </nav>

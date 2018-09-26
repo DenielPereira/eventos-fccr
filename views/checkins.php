@@ -27,6 +27,7 @@
                     <th scope="col">Horário</th>
                     <th scope="col">Local</th>
                     <th scope="col">Criador</th>
+                    <th scope="col" class="text-center">Check-in</th>
                 </tr>
             </thead>
             <tbody>
@@ -37,6 +38,11 @@
                     <td></td>
                     <td></td>
                     <td>Fulano</td>
+                    <td class="text-center">
+                        <a href="#">
+                            <i class="fas fa-check"></i>
+                        </a>
+                    </td>
                 </tr>
                 <tr>
                     <th scope="row">2</th>
@@ -45,6 +51,11 @@
                     <td></td>
                     <td></td>
                     <td>Fulano</td>
+                    <td class="text-center">
+                        <a href="#">
+                            <i class="fas fa-check"></i>
+                        </a>
+                    </td>
                 </tr>
                 <tr>
                     <th scope="row">3</th>
@@ -53,6 +64,11 @@
                     <td></td>
                     <td></td>
                     <td>Beltrano</td>
+                    <td class="text-center">
+                        <a href="#">
+                            <i class="fas fa-times"></i>
+                        </a>
+                    </td>
                 </tr>
             </tbody>
         </table>

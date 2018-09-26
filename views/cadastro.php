@@ -11,7 +11,7 @@
     <?php include './partials/head.php';?>
 </head>
 
-<body>
+<body style="overflow-y: scroll !important;">
     <?php include './partials/navbar.php';?>
     <div class="vh-100">
         <div class="row vh-100">
@@ -21,7 +21,7 @@
                 </div>
             </div>
             <div class="col-lg-6 block">
-                <form class="w-50 mx-auto centered" method="POST" action="../src/controllers/login.php">
+                <form class="w-80 mx-auto centered" method="POST" action="../src/controllers/login.php">
                     <h4>Cadastro</h4>
                     <div class="row">
                         <div class="col">
