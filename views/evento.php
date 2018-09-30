@@ -19,8 +19,8 @@
     </div>
      <div class="row">
             <div class="col-lg-6 border-right">
-                <div class="text-center">
-                    <img src="https://loremflickr.com/600/400/são+josé+dos+campos,fccr/all" class="rounded mx-auto d-block">                    
+                <div class="text-center mb-3">
+                    <img src="https://loremflickr.com/600/400/show,rock" class="rounded mx-auto d-block">                    
                 </div>
             </div>
             <div class="col-lg-6">

@@ -21,6 +21,9 @@
             <p class="lead">Aqui estão todos os usuários cadastrados no sistema.</p>
         </div>
     </div>
+    <div class="text-right mr-5 mb-2">
+        <a href="./../views/cadastro.php">Adicionar novo usuário</a>
+    </div>
     <div class="px-5 mt-auto">
         <table class="table table-hover">
             <thead>
@@ -28,20 +31,24 @@
                     <th scope="col">#</th>
                     <th scope="col">Nome</th>
                     <th scope="col">Sobrenome</th>
-                    <th scope="col">Administrador</th>
+                    <th scope="col" class="text-center">Administrador</th>
                 </tr>
             </thead>
             <tbody>
-                <? foreach($users as $rows): ?>
+                <?php foreach($users as $rows): ?>
                 <tr>
                     <th scope="row"><?php echo $rows[0]; ?></th>
                     <td><?php echo $rows[1]; ?></td></td>
                     <td><?php echo $rows[2]; ?></td>
                     <td>
-                        <?php if($rows[3] == 1): ?> 
-                            <i class="far fa-check-circle text-success"></i> 
+                        <?php if($rows[3] == 1): ?>
+                            <div class="text-center">
+                                <i class="fas fa-check text-success"></i> 
+                            </div> 
                         <?php else: ?>
-                            <i class="far fa-times-circle text-danger"></i>
+                            <div class="text-center">
+                                <i class="fas fa-times text-secondary"></i> 
+                            </div>
                         <?php endif; ?>     
                     </td>
                 </tr>

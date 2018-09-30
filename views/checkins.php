@@ -66,7 +66,7 @@
                     <td>Beltrano</td>
                     <td class="text-center">
                         <a href="#">
-                            <i class="fas fa-times"></i>
+                            <i class="fas fa-check"></i>
                         </a>
                     </td>
                 </tr>

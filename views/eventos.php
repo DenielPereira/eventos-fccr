@@ -27,6 +27,7 @@
                     <th scope="col">Horário</th>
                     <th scope="col">Local</th>
                     <th scope="col">Criador</th>
+                    <th scope="col" class="text-center">Check-in</th>
                 </tr>
             </thead>
             <tbody>
@@ -37,6 +38,11 @@
                     <td></td>
                     <td></td>
                     <td>Fulano</td>
+                    <td class="text-center">
+                        <a href="#">
+                            <i class="fas fa-check"></i>
+                        </a>
+                    </td>
                 </tr>
                 <tr>
                     <th scope="row">2</th>
@@ -45,6 +51,11 @@
                     <td></td>
                     <td></td>
                     <td>Fulano</td>
+                    <td class="text-center">
+                        <a href="#">
+                            <i class="fas fa-check"></i>
+                        </a>
+                    </td>
                 </tr>
                 <tr>
                     <th scope="row">3</th>
@@ -53,12 +64,18 @@
                     <td></td>
                     <td></td>
                     <td>Beltrano</td>
+                    <td class="text-center">
+                        <a href="#">
+                            <i class="fas fa-times"></i>
+                        </a>
+                    </td>
                 </tr>
 
             <? if ($_SESSION['admin'] == 1): ?> 
                     <tr>
                         <th scope="row"><a href="./../views/cadastro-eventos.php"><i class="fas fa-plus"></i></a></th>
                         <td class="text-muted">Adicionar Evento</td>
+                        <td></td>
                         <td></td>
                         <td></td>
                         <td></td>
