@@ -3,6 +3,7 @@
     if(!$_SESSION['logged']) header('Location: ./index.php');
 
     include_once("./../src/controllers/variables.php");
+    include_once("./../src/controllers/eventos.php");
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -23,53 +24,31 @@
                 <tr>
                     <th scope="col">#</th>
                     <th scope="col">Título</th>
-                    <th scope="col">Dia</th>
-                    <th scope="col">Horário</th>
+                    <th scope="col">Dia e Horário</th>
                     <th scope="col">Local</th>
                     <th scope="col">Criador</th>
                     <th scope="col" class="text-center">Check-in</th>
                 </tr>
             </thead>
             <tbody>
+                <? foreach($eventos as $rows): ?>
                 <tr>
-                    <th scope="row">1</th>
-                    <td><a href="./../views/evento.php">Lorem tempor incididunt aliquip ea labore.</a></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>Fulano</td>
+                    <th scope="row"><?php echo $rows[0]; ?></th>
+                    <td><?php echo $rows[1]; ?></td></td>
+                    <td><?php echo $rows[2]; ?></td>
+                    <td>
+                        <?php
+                            echo $rows[3];
+                        ?>
+                    </td>
+                    <td><?php echo $rows[4]; ?></td>
                     <td class="text-center">
                         <a href="#">
                             <i class="fas fa-check"></i>
                         </a>
                     </td>
                 </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Tempor ex labore Lorem minim commodo.</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>Fulano</td>
-                    <td class="text-center">
-                        <a href="#">
-                            <i class="fas fa-check"></i>
-                        </a>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td>Qui aute veniam deserunt culpa qui sint nisi ullamco eu.</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>Beltrano</td>
-                    <td class="text-center">
-                        <a href="#">
-                            <i class="fas fa-times"></i>
-                        </a>
-                    </td>
-                </tr>
+                <?php endforeach; ?>
 
             <? if ($_SESSION['admin'] == 1): ?> 
                     <tr>

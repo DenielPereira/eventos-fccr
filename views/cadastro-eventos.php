@@ -21,7 +21,7 @@
                 </div>
             </div>
             <div class="col-lg-6 block">
-                <form class="w-80 mx-auto centered" method="POST" action="../src/controllers/login.php">
+                <form class="w-80 mx-auto centered" method="POST" action="../src/controllers/cadastroEvento.php">
                     <h4>Cadastro de eventos</h4>
                     <div class="form-group text-left mt-3">
                         <label for="titulo">Titulo</label>
