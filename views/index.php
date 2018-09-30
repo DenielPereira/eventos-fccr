@@ -33,7 +33,7 @@
                         <label for="Password">Senha</label>
                         <input name="senha" type="password" class="form-control" id="Password" placeholder="Digite sua senha">
                         <small id="emailHelp" class="form-text text-muted text-right">
-                            <a href="#">Esqueceu a sua senha?</a>
+                            <a href="../views/forgot-pass.php">Esqueceu a sua senha?</a>
                         </small>
                     </div>
                     <div class="form-check text-left">
@@ -46,6 +46,5 @@
         </div>
     </div>
 </body>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <?php include './partials/scripts.php';?>
 </html>

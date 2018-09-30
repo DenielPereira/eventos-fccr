@@ -16,7 +16,7 @@
                 <a class="nav-link" href="./../views/eventos.php">Eventos</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="./../views/checkins.php">Check-ins</a>
+                <a class="nav-link" href="./../views/checkins.php">Meus Eventos</a>
             </li>
             <? if($_SESSION['admin'] == 1): ?>
                     <li class="nav-item">

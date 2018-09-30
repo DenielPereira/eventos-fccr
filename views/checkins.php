@@ -13,7 +13,7 @@
     <?php include './partials/navbar.php';?>
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
-            <h1 class="display-4">Check-ins</h1>
+            <h1 class="display-4">Meus Eventos</h1>
             <p class="lead">Aqui você vai encontrar os eventos que você deu check-in.</p>
         </div>
     </div>
