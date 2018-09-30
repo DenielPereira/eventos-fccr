@@ -33,14 +33,18 @@
             <tbody>
                 <tr>
                     <th scope="row">1</th>
-                    <td>Lorem tempor incididunt aliquip ea labore.</td>
+                    <td>
+                        <a href="../views/checkin.php">
+                        Lorem tempor incididunt aliquip ea labore.
+                        </a>
+                    </td>
                     <td></td>
                     <td></td>
                     <td></td>
                     <td>Fulano</td>
                     <td class="text-center">
                         <a href="#">
-                            <i class="fas fa-check"></i>
+                            <i class="fas fa-check"></i> <!-- quando o usuario clicar aqui ele da check-out -->
                         </a>
                     </td>
                 </tr>

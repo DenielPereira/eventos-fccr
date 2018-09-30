@@ -82,3 +82,12 @@ a{
 .fa-times{
     color: grey !important;
 }
+
+.comentario{
+    border-top: none;
+    border-left: none;
+    border-radius: 5px;
+}
+.comentario:focus{
+    outline: none !important;
+}
