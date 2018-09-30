@@ -31,7 +31,7 @@
                 </tr>
             </thead>
             <tbody>
-                <? foreach($eventos as $rows): ?>
+                <?php foreach($eventos as $rows): ?>
                 <tr>
                     <th scope="row"><?php echo $rows[0]; ?></th>
                     <td><?php echo $rows[1]; ?></td></td>
@@ -54,7 +54,6 @@
                     <tr>
                         <th scope="row"><a href="./../views/cadastro-eventos.php"><i class="fas fa-plus"></i></a></th>
                         <td class="text-muted">Adicionar Evento</td>
-                        <td></td>
                         <td></td>
                         <td></td>
                         <td></td>

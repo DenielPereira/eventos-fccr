@@ -35,9 +35,22 @@
                 </div>
                 <div class="ml-3">
                     <div class="row mt-3 ">
-                        <img src="https://www.w3schools.com/howto/img_avatar2.png" class="ml-1 rounded-circle" width="50" height="50">
-                        <input type="text" placeholder="O que você achou do evento?" class="w-80 ml-2 mt-3 comentario">
+
+                    <div class="imagem">
+                        <?php if($_SESSION['sexo'] == 'm'): ?> 
+                            <img src="https://www.w3schools.com/howto/img_avatar.png" class="ml-1 rounded-circle" width="50" height="50"> 
+                        <?php else: ?>
+                            <img src="https://www.w3schools.com/howto/img_avatar2.png" class="ml-1 rounded-circle" width="50" height="50">
+                        <?php endif; ?> 
                     </div>
+
+                    <div class="coment w-90">
+                        <form>
+                        <input type="text" id="comentario" placeholder="O que você achou do evento?" class="w-80 ml-2 mt-3 comentario">
+                        <button class="btn-send" id="btn-send"><i class="fas fa-angle-right"></i></button>
+                        </form>
+                    </div>
+                    </div> 
                 </div>
             </div>
         </div>
