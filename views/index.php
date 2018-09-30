@@ -20,7 +20,7 @@
                 </div>
             </div>
             <div class="col-lg-8 block">
-                <form class="w-50 mx-auto centered" method="POST" action="../src/controllers/login.php">
+                <form class="w-50 mx-auto centered" action="../src/controllers/login.php" method="POST">
                     <h4>Login</h4>
                     <div class="form-group text-left mt-5">
                         <label for="Email">Email</label>
@@ -46,6 +46,6 @@
         </div>
     </div>
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <?php include './partials/scripts.php';?>
-
 </html>

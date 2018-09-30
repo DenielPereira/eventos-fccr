@@ -21,7 +21,7 @@
                 </div>
             </div>
             <div class="col-lg-6 block">
-                <form class="w-80 mx-auto centered" method="POST" action="../src/controllers/login.php">
+                <form class="w-80 mx-auto centered" action="../src/controllers/cadastro.php" method="POST">
                     <h4>Cadastro</h4>
                     <div class="row">
                         <div class="col">
@@ -44,7 +44,7 @@
                     </div>
                     <div class="form-group text-left">
                         <label for="nascimento">Data de Nascimento</label>
-                        <input name="senha" type="date" class="form-control" id="nascimento" placeholder="Digite sua senha">
+                        <input name="nascimento" type="date" class="form-control" id="nascimento" placeholder="Digite sua senha">
                     </div>
                     <div class="form-group text-left">
                         <label for="Password">Senha</label>
@@ -52,14 +52,14 @@
                     </div>
                     <div class="form-group">
                         <div class="form-check  form-check-inline">
-                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1"
+                            <input class="form-check-input" type="radio" name="sexo" id="exampleRadios1" value="m"
                                 checked>
                             <label class="form-check-label" for="exampleRadios1">
                                 Masculino
                             </label>
                         </div>
                         <div class="form-check  form-check-inline">
-                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                            <input class="form-check-input" type="radio" name="sexo" id="exampleRadios2" value="f">
                             <label class="form-check-label" for="exampleRadios2">
                                 Feminino
                             </label>
@@ -67,14 +67,14 @@
                     </div>
                     <div class="form-group">
                         <div class="form-check  form-check-inline">
-                            <input class="form-check-input" type="checkbox" name="Radios" id="checkbox" value="option1"
+                            <input class="form-check-input" type="checkbox" name="admin" id="checkbox" value="1"
                                 checked>
                             <label class="form-check-label" for="checkbox">
                                 Esse usuário terá privilegios administrativos.
                             </label>
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-success">Entrar</button>
+                    <button type="submit" class="btn btn-success">Cadastrar</button>
                 </form>
             </div>
         </div>

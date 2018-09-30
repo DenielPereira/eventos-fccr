@@ -1,8 +1,10 @@
 <?php 
     session_start(); 
-    if(!$_SESSION['logged']) header('Location: ./index.php');
+    if(!$_SESSION['logged'] || !$_SESSION['admin']) header('Location: ./index.php');
 
     include_once("./../src/controllers/variables.php");
+    include_once("./../src/controllers/usuarios.php");
+    
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -30,24 +32,20 @@
                 </tr>
             </thead>
             <tbody>
+                <? foreach($users as $rows): ?>
                 <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td><i class="far fa-check-circle text-success"></i></td>
+                    <th scope="row"><?php echo $rows[0]; ?></th>
+                    <td><?php echo $rows[1]; ?></td></td>
+                    <td><?php echo $rows[2]; ?></td>
+                    <td>
+                        <?php if($rows[3] == 1): ?> 
+                            <i class="far fa-check-circle text-success"></i> 
+                        <?php else: ?>
+                            <i class="far fa-times-circle text-danger"></i>
+                        <?php endif; ?>     
+                    </td>
                 </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td><i class="far fa-times-circle text-danger"></i></td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td>Larry the Bird</td>
-                    <td>Silva</td>
-                    <td><i class="far fa-times-circle text-danger"></i></td>
-                </tr>
+                <?php endforeach; ?>
                 <tr>
                     <th scope="row"><a href="./../views/cadastro.php"><i class="fas fa-plus"></i></a></th>
                     <td class="text-muted">Adicionar Usuário</td>
