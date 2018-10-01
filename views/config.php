@@ -19,7 +19,7 @@
                 </div>
             </div>
             <div class="col-lg-6 block">
-                <form class="w-80 mx-auto centered" action="../src/controllers/cadastro.php" method="POST">
+                <form class="w-80 mx-auto centered" action="../src/controllers/alterarcadastro.php" method="POST">
                     <h4>Alterar Cadastro</h4>
                     <div class="row">
                         <div class="col">

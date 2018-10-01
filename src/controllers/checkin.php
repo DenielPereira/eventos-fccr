@@ -1,5 +1,9 @@
 <?php
-session_start();
+  if(!isset($_SESSION)) 
+    { 
+        session_start(); 
+    } 
+
 include_once(__DIR__ . "/../models/EventoDAO.php");
 include_once(__DIR__ . "/../classes/Database.php");
 

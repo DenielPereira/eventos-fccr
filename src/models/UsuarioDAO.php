@@ -65,4 +65,25 @@ class UsuarioDAO {
             echo "Falha: {$e}";
         }
     }
+
+    public function update($_usuario) {
+        try {
+            $nome       = $_usuario->getNome();
+            $sobrenome  = $_usuario->getSobrenome();
+            $email      = $_usuario->getEmail();
+            $senha      = $_usuario->getSenha();
+            $nascimento = $_usuario->getNascimento();
+            $sexo       = $_usuario->getSexo();
+
+            $sql = "UPDATE usuario (nome, sobrenome, email, senha, nascimento, sexo)
+                SET ('$nome', '$sobrenome', '$email', '$senha', '$nascimento', '$sexo')
+                WHERE ('id' =  $_SESSION['id']");
+            $this->_conexaoDB->exec($sql);
+            header('Location: ./../../views/users.php');
+        } catch(PDOException $e) {
+            echo "Falha: {$e}";
+        }
+    }    
+
 }
+

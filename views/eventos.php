@@ -31,6 +31,7 @@
                 </tr>
             </thead>
             <tbody>
+            <?php if($eventos):?>
                 <?php foreach($eventos as $rows): ?>
                 <tr>
                     <th scope="row"><?php echo $rows[0]; ?></th>
@@ -49,7 +50,11 @@
                     </td>
                 </tr>
                 <?php endforeach; ?>
-
+                <?php else: ?>
+                <div class="alert alert-danger text-center" role="alert">
+                    Você ainda não deu checkin em nenhum evento
+                </div>
+            <?php endif; ?>   
             <? if($_SESSION['admin'] == 1): ?> 
                 <tr>
                     <th scope="row"><a href="./../views/cadastro-eventos.php"><i class="fas fa-plus"></i></a></th>
