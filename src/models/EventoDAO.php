@@ -26,6 +26,19 @@ class EventoDAO {
         }
     } 
 
+    public function getEvento($id) {
+        try {
+            $sql = "SELECT titulo, endereco, local, inicio, fim FROM eventos WHERE id = '$id'";
+            $result = $this->_conexaoDB->query($sql);
+            $rows = $result->fetchAll();
+            if($rows) {
+                return $rows;
+            } 
+        } catch(PDOException $e) {
+            echo "Falha: {$e}";
+        }
+    }
+
     public function getAllEvents() {
         try {
             $sql = "SELECT eventos.id, eventos.titulo, DATE_FORMAT(eventos.inicio, '%d/%m/%Y - %H:%i'), eventos.local, usuario.nome FROM eventos
@@ -35,6 +48,23 @@ class EventoDAO {
             if($rows) {
                 return $rows;
             } 
+        } catch(PDOException $e) {
+            echo "Falha: {$e}";
+        }
+    }
+
+    public function getChecksInFull($id) {
+        try {
+            $sql = "SELECT eventos.id, eventos.titulo, eventos.inicio, eventos.local, usuario.nome FROM eventos
+            JOIN usuario ON eventos.criador = usuario.id
+            JOIN participantes WHERE participantes.Usuario_id = '$id' AND eventos.id = participantes.Eventos_id";
+            $result = $this->_conexaoDB->query($sql);
+            $rows = $result->fetchAll();
+            if($rows) {
+                return $rows;
+            } else {
+                return false;
+            }
         } catch(PDOException $e) {
             echo "Falha: {$e}";
         }

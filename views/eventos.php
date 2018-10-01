@@ -34,7 +34,7 @@
                 <?php foreach($eventos as $rows): ?>
                 <tr>
                     <th scope="row"><?php echo $rows[0]; ?></th>
-                    <td><?php echo $rows[1]; ?></td></td>
+                    <td><a href="./../views/evento.php?id=<? echo $rows[0]; ?>"><?php echo $rows[1]; ?></a></td></td>
                     <td><?php echo $rows[2]; ?></td>
                     <td>
                         <?php
@@ -50,17 +50,16 @@
                 </tr>
                 <?php endforeach; ?>
 
-            <? if ($_SESSION['admin'] == 1): ?> 
-                    <tr>
-                        <th scope="row"><a href="./../views/cadastro-eventos.php"><i class="fas fa-plus"></i></a></th>
-                        <td class="text-muted">Adicionar Evento</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
+            <? if($_SESSION['admin'] == 1): ?> 
+                <tr>
+                    <th scope="row"><a href="./../views/cadastro-eventos.php"><i class="fas fa-plus"></i></a></th>
+                    <td class="text-muted">Adicionar Evento</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
             <? endif; ?>  
-
             </tbody>
         </table>
     </div>

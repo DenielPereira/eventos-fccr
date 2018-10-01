@@ -3,6 +3,7 @@
     if(!$_SESSION['logged']) header('Location: ./index.php');
 
     include_once("./../src/controllers/variables.php");
+    include_once("./../src/controllers/evento.php");
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -13,8 +14,12 @@
     <?php include './partials/navbar.php';?>
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
-            <h1 class="display-4">Titulo do evento</h1>
-            <p class="lead">Aqui estão as informações do evento (titulo)</p>
+            <h1 class="display-4"><? echo $evento[0][titulo] ?></h1>
+            <p class="lead">
+                <b>Endereço: </b><? echo $evento[0][endereco] ?><br>
+                <b>Local: </b><? echo $evento[0][local] ?><br>
+                <b>Data e Horário: </b><? echo $evento[0][inicio] ?><br>
+            </p>
         </div>
     </div>
      <div class="row">
@@ -24,29 +29,31 @@
                 </div>
             </div>
             <div class="col-lg-6">
+                <? if($_GET['sucesso']): ?>
+                    <div class="alert alert-success text-center" role="alert">
+                        Comentário registrado!
+                    </div>
+                <? endif; ?>
                 <div class="mb-2">
                     <h4>Comentários</h4>
                 </div>
                 <div class="ml-3">
                     <div class="row">
-                        <img src="https://www.w3schools.com/howto/img_avatar.png" class="ml-1 rounded-circle" width="50" height="50">
-                        <p class="ml-2 mt-3">Adipisicing enim cillum tempor excepteur exercitation magna ad sit eu duis nulla id.</p>
-                    </div>
-                    <div class="row mt-3 ">
-                        <img src="https://www.w3schools.com/howto/img_avatar2.png" class="ml-1 rounded-circle" width="50" height="50">
-                        <p class="ml-2 mt-3">Ut deserunt anim id sit mollit.</p>
-                    </div>
-                    <div class="row mt-3 ">
-                        <img src="https://www.w3schools.com/howto/img_avatar.png" class="ml-1 rounded-circle" width="50" height="50">
-                        <p class="ml-2 mt-3">Elit aliqua laborum amet et.</p>
-                    </div>
-                    <div class="row mt-3 ">
-                        <img src="https://www.w3schools.com/howto/img_avatar.png" class="ml-1 rounded-circle" width="50" height="50">
-                        <p class="ml-2 mt-3">Ipsum aute dolore sint quis.</p>
-                    </div>
-                    <div class="row mt-3 ">
-                        <img src="https://www.w3schools.com/howto/img_avatar2.png" class="ml-1 rounded-circle" width="50" height="50">
-                        <p class="ml-2 mt-3">Voluptate ipsum ex anim et cillum consectetur minim dolore nisi aute ea..</p>
+                    <? if($comentarios): ?>
+                        <?php foreach($comentarios as $comentario): ?>
+                            <? if($comentario[sexo] == 'm'): ?>
+                                <img src="https://www.w3schools.com/howto/img_avatar.png" class="ml-1 rounded-circle" width="50" height="50">
+                            <? else: ?>
+                            <img src="https://www.w3schools.com/howto/img_avatar2.png" class="ml-1 rounded-circle" width="50" height="50">
+                            <? endif; ?>
+                            <p><? echo $comentario[nome] ?></p>
+                            <p class="ml-2 mt-3"><? echo $comentario[comentario] ?></p>
+                        <?php endforeach; ?>
+                    <? else: ?>
+                        <div class="alert alert-danger text-center" role="alert">
+                            Não contém nenhum comentário
+                        </div>
+                    <? endif; ?>
                     </div>
                 </div>
             </div>

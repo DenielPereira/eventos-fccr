@@ -29,7 +29,7 @@ class UsuarioDAO {
 
     public function login($email, $senha) {
         try {
-            $sql = "SELECT nome, sobrenome, sexo, nascimento, id, admin_site FROM usuario
+            $sql = "SELECT nome, sobrenome, email, sexo, nascimento, id, admin_site FROM usuario
             WHERE email = '$email' AND senha = '$senha'";
             $result = $this->_conexaoDB->query($sql);
             $rows = $result->fetchAll();
@@ -38,6 +38,7 @@ class UsuarioDAO {
                 $_SESSION['nome']           = $rows[0][nome];
                 $_SESSION['sobrenome']      = $rows[0][sobrenome];
                 $_SESSION['sexo']           = $rows[0][sexo];
+                $_SESSION['email']          = $rows[0][email];
                 $_SESSION['admin']          = $rows[0][admin_site];
                 $_SESSION['nascimento']     = $rows[0][nascimento];
                 $_SESSION['id']             = $rows[0][id];

@@ -45,9 +45,10 @@
                     </div>
 
                     <div class="coment w-90">
-                        <form>
-                        <input type="text" id="comentario" placeholder="O que você achou do evento?" class="w-80 ml-2 mt-3 comentario">
-                        <button class="btn-send" id="btn-send"><i class="fas fa-angle-right"></i></button>
+                        <form action="./../src/controllers/cadastroComentario.php" method="POST">
+                        <input typ="text" name="id" value="<? echo $_GET['id'] ?>" hidden></input>
+                        <input type="text" name="comentario" id="comentario" placeholder="O que você achou do evento?" class="w-80 ml-2 mt-3 comentario">
+                        <button type="submit" class="btn-send" id="btn-send"><i class="fas fa-angle-right"></i></button>
                         </form>
                     </div>
                     </div> 
