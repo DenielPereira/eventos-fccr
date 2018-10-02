@@ -18,7 +18,7 @@
             <h1 class="display-4">
                 <?php 
 
-                if($_SESSION['sexo'] == 'm'){
+                if($_SESSION['sexo'] == 'm' || $_SESSION['sexo'] == 'M'){
                     echo $man;
                 }else{
                     echo $woman;
