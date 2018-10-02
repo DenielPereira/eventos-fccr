@@ -37,24 +37,43 @@
                 <div class="mb-2">
                     <h4>Comentários</h4>
                 </div>
-                <div class="ml-3">
-                    <div class="row">
+                <div class="ml-0">
                     <? if($comentarios): ?>
+                    
                         <?php foreach($comentarios as $comentario): ?>
                             <? if($comentario[sexo] == 'm'): ?>
-                                <img src="https://www.w3schools.com/howto/img_avatar.png" class="ml-1 rounded-circle" width="50" height="50">
+                                <div class="row mt-3">
+                                <div class="col-lg-1">
+                                        <img src="../assets/images/avatar_m.png" class="rounded-circle" width="50" height="50">
+                                    </div>
+                                    <div class="col-lg-11">
+                                        <div class="ml-2">
+                                            <p class="mb-0 text-success"><? echo $comentario[nome] ?></p>
+                                            <p><? echo $comentario[comentario] ?></p>
+                                        </div>                                  
+                                    </div>
+                                </div>
                             <? else: ?>
-                            <img src="https://www.w3schools.com/howto/img_avatar2.png" class="ml-1 rounded-circle" width="50" height="50">
+                                <div class="row">
+                                    <div class="col-lg-1">
+                                        <img src="../assets/images/avatar_f.png" class="rounded-circle" width="50" height="50">
+                                    </div>
+                                    <div class="col-lg-11">
+                                        <div class="ml-2">
+                                            <p class="mb-0 text-success"><? echo $comentario[nome] ?></p>
+                                            <p><? echo $comentario[comentario] ?></p>
+                                        </div>                                  
+                                    </div>
+                                </div>
                             <? endif; ?>
-                            <p><? echo $comentario[nome] ?></p>
-                            <p class="ml-2 mt-3"><? echo $comentario[comentario] ?></p>
+                            
                         <?php endforeach; ?>
                     <? else: ?>
                         <div class="alert alert-danger text-center" role="alert">
                             Não contém nenhum comentário
                         </div>
                     <? endif; ?>
-                    </div>
+                    
                 </div>
             </div>
         </div>

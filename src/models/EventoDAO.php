@@ -19,6 +19,7 @@ class EventoDAO {
 
             $sql = "INSERT INTO eventos (titulo, local, endereco, inicio, fim, criador)
                 VALUES ('$titulo', '$local', '$endereco', '$inicio', '$fim', '$criador')";
+            
             $this->_conexaoDB->exec($sql);
             header('Location: ./../../views/eventos.php');
         } catch(PDOException $e) {

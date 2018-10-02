@@ -39,9 +39,9 @@
             </div>
 
             <?php if($_SESSION['sexo'] == 'm'): ?> 
-                <img src="https://www.w3schools.com/howto/img_avatar.png" class="ml-1"> 
+                <img src="../assets/images/avatar_m.png" class="ml-1"> 
             <?php else: ?>
-                <img src="https://www.w3schools.com/howto/img_avatar2.png" class="ml-1">
+                <img src="../assets/images/avatar_f.png" class="ml-1">
             <?php endif; ?>      
         </div>
     </div>

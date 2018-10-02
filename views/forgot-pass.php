@@ -34,7 +34,7 @@
                         <small id="emailHelp" class="form-text text-muted text-right">
                             <a href="../views/index.php">Não precisa, eu lembrei a minha senha.</a>
                         </small>                  
-</div>
+                    </div>
                     <button type="submit" class="btn btn-success">Enviar</button>
                 </form>
             </div>
