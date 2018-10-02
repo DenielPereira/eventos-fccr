@@ -77,17 +77,17 @@ class UsuarioDAO {
             $sexo       = $_usuario->getSexo();
 
             $sql = "UPDATE usuario
-                SET nome = '$nome', sobrenome = '$sobrenome', 
-                email = '$email', senha = '$senha', nascimento = '$nascimento', 
-                sexo = '$sexo' WHERE id = $_SESSION[id]";
+                    SET nome = '$nome', sobrenome = '$sobrenome', 
+                    email = '$email', senha = '$senha', nascimento = '$nascimento', 
+                    sexo = '$sexo' WHERE id = $_SESSION[id]";
             $this->_conexaoDB->exec($sql);
             
-            $_SESSION['nome'] = $nome;
-            $_SESSION['sobrenome'] = $sobrenome;
-            $_SESSION['email'] = $email;
-            $_SESSION['senha'] = $senha;
+            $_SESSION['nome']       = $nome;
+            $_SESSION['sobrenome']  = $sobrenome;
+            $_SESSION['email']      = $email;
+            $_SESSION['senha']      = $senha;
             $_SESSION['nascimento'] = $nascimento;
-            $_SESSION['sexo'] = $sexo;
+            $_SESSION['sexo']       = $sexo;
             
             header('Location: ./../../views/users.php');
         } catch(PDOException $e) {
