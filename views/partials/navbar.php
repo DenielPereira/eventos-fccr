@@ -32,7 +32,7 @@
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                     <h6 class="dropdown-header">Perfil</h6>
-                    <a class="dropdown-item" href="#">Meus Eventos</a>
+                    <a class="dropdown-item" href="./../views/checkins.php">Meus Eventos</a>
                     <a class="dropdown-item" href="./../views/config.php">Alterar Cadastro</a>
                     <a class="dropdown-item" href="./../src/controllers/logout.php">Sair</a>
                 </div>

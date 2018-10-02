@@ -51,13 +51,17 @@
                 </tr>
                 <?php endforeach; ?>
                 <?php else: ?>
-                <div class="alert alert-danger text-center" role="alert">
-                    Você ainda não deu checkin em nenhum evento
-                </div>
+                    <div class="row d-flex justify-content-center">                      
+                        <img src="../assets/images/avatar_f_suport.png" class="rounded-circle" width="50" height="50">                     
+                        <div class="ml-2">
+                            <p class="mb-0 text-success">Suporte - FCCR</p>
+                            <p>Ainda não foram adicionados eventos aqui <i class="far fa-frown" ></i></p>
+                        </div>                                  
+                    </div>
             <?php endif; ?>   
             <? if($_SESSION['admin'] == 1): ?> 
                 <tr>
-                    <th scope="row"><a href="./../views/cadastro-eventos.php"><i class="fas fa-plus"></i></a></th>
+                    <th scope="row"><a href="./../views/cadastro-eventos.php"><i class="fas fa-plus text-success"></i></a></th>
                     <td class="text-muted">Adicionar Evento</td>
                     <td></td>
                     <td></td>

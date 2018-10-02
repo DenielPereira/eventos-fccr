@@ -18,9 +18,7 @@
             <p class="lead">Aqui você vai encontrar os eventos que você deu check-in.</p>
         </div>
     </div>
-    <div class="px-5 mt-auto">
-        <?php if($eventos):?>
-            <?php foreach($eventos as $rows): ?>
+    <div class="px-5 mt-auto">       
                 <table class="table table-hover">
                 <thead>
                     <tr>
@@ -33,6 +31,8 @@
                     </tr>
                 </thead>
                 <tbody>
+                <?php if($eventos):?>
+                    <?php foreach($eventos as $rows): ?>
                     <tr>
                         <th scope="row"><?php echo $rows[0]; ?></th>
                         <td><a href="./../views/checkin.php?id=<? echo $rows[0]; ?>"><?php echo $rows[1]; ?></a></td></td>
@@ -51,9 +51,13 @@
                     </tr>
             <?php endforeach; ?>
             <?php else: ?>
-                <div class="alert alert-danger text-center" role="alert">
-                    Você ainda não deu checkin em nenhum evento
-                </div>
+                    <div class="row d-flex justify-content-center">
+                        <img src="../assets/images/avatar_f_suport.png" class="rounded-circle" width="50" height="50">
+                        <div class="ml-2">
+                            <p class="mb-0 text-success">Suporte - FCCR</p>
+                            <p>Essa tabela está em branco porque você ainda nao deu check-in em nenhum evento <i class="far fa-frown" ></i></p>
+                        </div>                                  
+                    </div>
             <?php endif; ?>   
             </tbody>
         </table>

@@ -69,8 +69,38 @@
                             
                         <?php endforeach; ?>
                     <? else: ?>
-                        <div class="alert alert-danger text-center" role="alert">
-                            Não contém nenhum comentário
+                        <div class="row">
+                            <div class="col-lg-1">
+                                <img src="../assets/images/avatar_f_suport.png" class="rounded-circle" width="50" height="50">
+                            </div>
+                            <div class="col-lg-11">
+                                <div class="ml-2">
+                                    <p class="mb-0 text-success">Suporte - FCCR</p>
+                                    <p>Poxa, ninguem comentou nesse evento ainda <i class="far fa-frown" ></i></p>
+                                </div>                                  
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-1">
+                                <img src="../assets/images/avatar_f_suport.png" class="rounded-circle" width="50" height="50">
+                            </div>
+                            <div class="col-lg-11">
+                                <div class="ml-2">
+                                    <p class="mb-0 text-success">Suporte - FCCR</p>
+                                    <p>Que tal ser o primeiro a comentar? :)</p>
+                                </div>                                  
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-1">
+                                <img src="../assets/images/avatar_f_suport.png" class="rounded-circle" width="50" height="50">
+                            </div>
+                            <div class="col-lg-11">
+                                <div class="ml-2">
+                                    <p class="mb-0 text-success">Suporte - FCCR</p>
+                                    <p>É só ir na sessão 'Meus Eventos' do menu superior, clicar no evento desejado e adicionar um comentário. Você pode até colocar fotos!</p>
+                                </div>                                  
+                            </div>
                         </div>
                     <? endif; ?>
                     
