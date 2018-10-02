@@ -23,7 +23,7 @@ class UsuarioDAO {
             $this->_conexaoDB->exec($sql);
             header('Location: ./../../views/users.php');
         } catch(PDOException $e) {
-            echo "Falha: {$e}";
+            echo "Falha: {$e->getMessage()}";
         }
     }
 
@@ -49,7 +49,7 @@ class UsuarioDAO {
                 echo "Dados inválidos";
             }
         } catch(PDOException $e) {
-            echo "Falha: {$e}";
+            echo "Falha: {$e->getMessage()}";
         }
     }
 
@@ -62,7 +62,7 @@ class UsuarioDAO {
                 return $rows;
             } 
         } catch(PDOException $e) {
-            echo "Falha: {$e}";
+            echo "Falha: {$e->getMessage()}";
         }
     }
 
@@ -91,7 +91,7 @@ class UsuarioDAO {
             
             header('Location: ./../../views/users.php');
         } catch(PDOException $e) {
-            echo "Falha: {$e}";
+            echo "Falha: {$e->getMessage()}";
         }
     }    
 
