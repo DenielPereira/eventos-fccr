@@ -30,16 +30,16 @@
                 <tr>
                     <th scope="col">#</th>
                     <th scope="col">Nome</th>
-                    <th scope="col">Sobrenome</th>
+                    <th scope="col">E-mail</th>
                     <th scope="col" class="text-center">Administrador</th>
                 </tr>
             </thead>
             <tbody>
                 <?php foreach($users as $rows): ?>
                 <tr>
-                    <th scope="row"><a href="./../views/alterar-user.php?id=<? echo $rows[0]; ?>"><?php echo $rows[0]; ?></a></th>
-                    <td><?php echo $rows[1]; ?></td></td>
-                    <td><?php echo $rows[2]; ?></td>
+                    <th scope="row"><? echo $rows[0]; ?></th>
+                    <td><a href="./../views/alterar-user.php?id=<?php echo $rows[0]; ?>"><?php echo $rows[1] ." ".  $rows[2]; ?></a></td>
+                    <td><?php echo $rows[4]; ?></td>
                     <td>
                         <?php if($rows[3] == 1): ?>
                             <div class="text-center">

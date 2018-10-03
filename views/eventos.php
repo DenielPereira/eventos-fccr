@@ -44,8 +44,8 @@
                     </td>
                     <td><?php echo $rows[4]; ?></td>
                     <td class="text-center">
-                        <a href="#">
-                            <i class="fas fa-check"></i>
+                        <a href="../src/controllers/checkins.php">
+                            <button class="btn btn-success">Vou participar</button>
                         </a>
                     </td>
                 </tr>

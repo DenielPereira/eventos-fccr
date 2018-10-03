@@ -29,7 +29,7 @@ class EventoDAO {
 
     public function getEvento($id) {
         try {
-            $sql = "SELECT titulo, endereco, local, inicio, fim FROM eventos WHERE id = '$id'";
+            $sql = "SELECT titulo, endereco, local, DATE_FORMAT(inicio, '%d/%m/%Y - %H:%i'), fim FROM eventos WHERE id = '$id'";
             $result = $this->_conexaoDB->query($sql);
             $rows = $result->fetchAll();
             if($rows) {
@@ -70,4 +70,25 @@ class EventoDAO {
             echo "Falha: {$e}";
         }
     }
+
+    public function Checkin($id){
+        $idUsuario = $id;
+
+        try{
+            $sql = "INSERT INTO participantes (eventos_id, usuario_id) VALUES ('$eventoID', '$idUsuario')";
+            $result = $this->_conexaoDB->query($sql);
+            $rows = $result->fetchAll();
+
+            if($rows) {
+                return $rows;
+            } else {
+                return false;
+            }
+        } catch(PDOException $e) {
+            echo "Falha: {$e}";
+        }
+
+
+    }
+
 }

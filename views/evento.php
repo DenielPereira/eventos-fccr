@@ -25,7 +25,7 @@
      <div class="row">
             <div class="col-lg-6 border-right">
                 <div class="text-center mb-3">
-                    <img src="https://loremflickr.com/600/400/show,rock" class="rounded mx-auto d-block">                    
+                    <img src="https://loremflickr.com/600/400/show,rock,brasil" class="rounded mx-auto d-block">                    
                 </div>
             </div>
             <div class="col-lg-6">

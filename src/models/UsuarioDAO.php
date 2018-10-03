@@ -46,7 +46,7 @@ class UsuarioDAO {
                 header('Location: ./../../views/home.php'); 
             } else {
                 /* message temporária */
-                echo "<script>alert ('Seus dados estão invalidos, tente novamente!');</script>";
+                echo "<script>alert ('Seus dados estão inválidos, tente novamente!');</script>";
                 echo "<script>window.location.href = './../../views/index.php';</script>";
             }
         } catch(PDOException $e) {
@@ -56,7 +56,7 @@ class UsuarioDAO {
 
     public function getAllUsers() {
         try {
-            $sql = "SELECT id, nome, sobrenome, admin_site FROM usuario";
+            $sql = "SELECT id, nome, sobrenome, admin_site, email FROM usuario";
             $result = $this->_conexaoDB->query($sql);
             $rows = $result->fetchAll();
             if($rows) {
@@ -98,17 +98,19 @@ class UsuarioDAO {
     
     public function getUserToAlt($id) {
         try {
-            $sql = "SELECT nome, sobrenome, email, email, senha, nascimento, sexo, admin_site
+            $sql = "SELECT nome, sobrenome, email, senha, nascimento, sexo, admin_site
                     FROM usuario WHERE id = '$id'";
             $result = $this->_conexaoDB->query($sql);
             $rows = $result->fetchAll();
+
             if($rows) {
                 return $rows;
-        } 
-        }   catch(PDOException $e) {
+            } 
+
+        } catch(PDOException $e) {
                 echo "Falha: {$e->getMessage()}";
         }
-                }
+    }
             
     public function updateUserAdmin($usuario) {
         try {
