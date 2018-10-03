@@ -75,7 +75,7 @@
                     </div>
                     <div class="form-group">
                         <div class="form-check  form-check-inline">
-                            <input class="form-check-input" type="checkbox" name="admin" id="checkbox" value="1"
+                        <input class="form-check-input" type="hidden" name="admin" value="0" /> <input class="form-check-input" type="checkbox" name="admin" id="checkbox" value="1"
                                 checked>
                             <label class="form-check-label" for="checkbox">
                                 Esse usuário terá privilegios administrativos.
