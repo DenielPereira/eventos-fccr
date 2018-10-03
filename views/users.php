@@ -37,7 +37,7 @@
             <tbody>
                 <?php foreach($users as $rows): ?>
                 <tr>
-                    <th scope="row"><?php echo $rows[0]; ?></th>
+                    <th scope="row"><a href="./../views/alterar-user.php?id=<? echo $rows[0]; ?>"><?php echo $rows[0]; ?></a></th>
                     <td><?php echo $rows[1]; ?></td></td>
                     <td><?php echo $rows[2]; ?></td>
                     <td>

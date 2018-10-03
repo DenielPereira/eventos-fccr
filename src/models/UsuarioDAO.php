@@ -68,7 +68,6 @@ class UsuarioDAO {
 
     public function update($_usuario) {
         try {
-            session_start();
             $nome       = $_usuario->getNome();
             $sobrenome  = $_usuario->getSobrenome();
             $email      = $_usuario->getEmail();
@@ -89,11 +88,46 @@ class UsuarioDAO {
             $_SESSION['nascimento'] = $nascimento;
             $_SESSION['sexo']       = $sexo;
             
-            header('Location: ./../../views/users.php');
+            header('Location: ./../../views/home.php');
         } catch(PDOException $e) {
             echo "Falha: {$e->getMessage()}";
         }
-    }    
+    }
+    
+    public function getUserToAlt($id) {
+        try {
+            $sql = "SELECT nome, sobrenome, email, email, senha, nascimento, sexo, admin_site
+                    FROM usuario WHERE id = '$id'";
+            $result = $this->_conexaoDB->query($sql);
+            $rows = $result->fetchAll();
+            if($rows) {
+                return $rows;
+        } 
+        }   catch(PDOException $e) {
+                echo "Falha: {$e->getMessage()}";
+        }
+                }
+            
+    public function updateUserAdmin($_usuario, $_id) {
+        try {
+            $nome       = $_usuario->getNome();
+            $sobrenome  = $_usuario->getSobrenome();
+            $email      = $_usuario->getEmail();
+            $senha      = $_usuario->getSenha();
+            $nascimento = $_usuario->getNascimento();
+            $sexo       = $_usuario->getSexo();
+            
+            $sql = "UPDATE usuario
+                    SET nome = '$nome', sobrenome = '$sobrenome', 
+                    email = '$email', senha = '$senha', nascimento = '$nascimento', 
+                    sexo = '$sexo' WHERE id = '$_id'";
+            $this->_conexaoDB->exec($sql);
+                        
+            header('Location: ./../../views/users.php');
+            } catch(PDOException $e) {
+                echo "Falha: {$e->getMessage()}";
+                    }
+                } 
+            }
 
-}
 
