@@ -47,7 +47,7 @@
                     </div>
                     <div class="form-group text-left">
                         <label for="Password">Senha</label>
-                        <input name="senha" type="password" class="form-control" id="Password" placeholder="Escolha uma senha">
+                        <input name="senha" type="password" class="form-control" id="Password" placeholder="Escolha uma senha" required>
                     </div>
                     <div class="form-group">
                         <div class="form-check  form-check-inline">
@@ -70,6 +70,15 @@
                             <? endif; ?>
                             <label class="form-check-label" for="exampleRadios2">
                                 Feminino
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-check  form-check-inline">
+                            <input class="form-check-input" type="checkbox" name="admin" id="checkbox" value="1"
+                                checked>
+                            <label class="form-check-label" for="checkbox">
+                                Esse usuário terá privilegios administrativos.
                             </label>
                         </div>
                     </div>

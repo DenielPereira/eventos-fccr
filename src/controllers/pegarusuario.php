@@ -9,5 +9,6 @@ $usuario = new Usuario();
 $useraDAO = new UsuarioDAO($db);
 
 $infouser = $useraDAO->getUserToAlt($_GET['id']);
-
+$idAlt = $_GET['id'];
+$_SESSION['idAlt'] = $idAlt;
 

@@ -68,6 +68,7 @@ class UsuarioDAO {
 
     public function update($_usuario) {
         try {
+            session_start();
             $nome       = $_usuario->getNome();
             $sobrenome  = $_usuario->getSobrenome();
             $email      = $_usuario->getEmail();
@@ -108,19 +109,21 @@ class UsuarioDAO {
         }
                 }
             
-    public function updateUserAdmin($_usuario, $_id) {
+    public function updateUserAdmin($usuario) {
         try {
-            $nome       = $_usuario->getNome();
-            $sobrenome  = $_usuario->getSobrenome();
-            $email      = $_usuario->getEmail();
-            $senha      = $_usuario->getSenha();
-            $nascimento = $_usuario->getNascimento();
-            $sexo       = $_usuario->getSexo();
+            session_start();
+            $nome       = $usuario->getNome();
+            $sobrenome  = $usuario->getSobrenome();
+            $email      = $usuario->getEmail();
+            $senha      = $usuario->getSenha();
+            $nascimento = $usuario->getNascimento();
+            $sexo       = $usuario->getSexo();
+            $admin      = $usuario->getAdmin();
             
             $sql = "UPDATE usuario
                     SET nome = '$nome', sobrenome = '$sobrenome', 
                     email = '$email', senha = '$senha', nascimento = '$nascimento', 
-                    sexo = '$sexo' WHERE id = '$_id'";
+                    sexo = '$sexo', admin_site = '$admin' WHERE id = '$_SESSION[idAlt]'";
             $this->_conexaoDB->exec($sql);
                         
             header('Location: ./../../views/users.php');
