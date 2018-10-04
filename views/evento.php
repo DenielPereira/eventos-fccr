@@ -19,13 +19,14 @@
                 <b>Endereço: </b><? echo $evento[0][endereco] ?><br>
                 <b>Local: </b><? echo $evento[0][local] ?><br>
                 <b>Data e Horário: </b><? echo $evento[0][inicio] ?><br>
+        
                 <? if(!$registro): ?>
                 <a href="../src/controllers/checkins.php">
                     <button class="btn btn-success">Vou participar</button>
                 </a>
                 <? else: ?>
-                <a href="../views/checkins.php">
-                    <button class="btn btn-success">Ei, você já está participando!</button>
+                <a class="text-success" href="../views/checkins.php">
+                  Você está participando!
                 </a>
                 <? endif; ?>
             </p>
@@ -34,7 +35,7 @@
      <div class="row">
             <div class="col-lg-6 border-right">
                 <div class="text-center mb-3">
-                    <img src="https://loremflickr.com/600/400/show,rock,brasil" class="rounded mx-auto d-block">                    
+                    <img src="https://loremflickr.com/600/400/show,blues" class="rounded mx-auto d-block">                    
                 </div>
             </div>
             <div class="col-lg-6">
@@ -118,4 +119,5 @@
         </div>
     </div>
 </body>
+<?php include './partials/scripts.php';?>
 </html>

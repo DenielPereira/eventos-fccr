@@ -34,7 +34,23 @@
                 <?php foreach($eventos as $rows): ?>
                 <tr>
                     <th scope="row"><?php echo $rows[0]; ?></th>
-                    <td><a href="./../views/evento.php?id=<? echo $rows[0]; ?>"><?php echo $rows[1]; ?></a></td></td>
+                    <td>
+
+                        <div class="dropdown show">
+                            <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <?php echo $rows[1]; ?>
+                            </a>
+
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                <h6 class="dropdown-header">Ações</h6>
+                                <a class="dropdown-item" href="./../views/evento.php?id=<? echo $rows[0]; ?>">Visualizar</a>
+                                <a class="dropdown-item" href="./../views/alterar-evento.php?id=<? echo $rows[0]; ?>">Editar</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item text-danger" href="#">Excluir</a>
+                            </div>
+                        </div>
+
+                    </td>
                     <td><?php echo $rows[2]; ?></td>
                     <td>
                         <?php
@@ -60,7 +76,6 @@
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td></td>
                 </tr>
             <? endif; ?>  
             </tbody>
@@ -68,5 +83,6 @@
     </div>
 
 </body>
+    <?php include './partials/scripts.php';?>
 
 </html>

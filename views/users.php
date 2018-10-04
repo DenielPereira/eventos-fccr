@@ -38,7 +38,24 @@
                 <?php foreach($users as $rows): ?>
                 <tr>
                     <th scope="row"><? echo $rows[0]; ?></th>
-                    <td><a href="./../views/alterar-user.php?id=<?php echo $rows[0]; ?>"><?php echo $rows[1] ." ".  $rows[2]; ?></a></td>
+                    <td>
+
+                        <a href=""></a>
+
+                        <div class="dropdown show">
+                            <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <?php echo $rows[1] ." ".  $rows[2]; ?>
+                            </a>
+
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                <h6 class="dropdown-header">Ações</h6>
+                                <a class="dropdown-item" href="./../views/alterar-user.php?id=<?php echo $rows[0]; ?>">Alterar</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item text-danger" href="#">Excluir</a>
+                            </div>
+                        </div>
+
+                    </td>
                     <td><?php echo $rows[4]; ?></td>
                     <td>
                         <?php if($rows[3] == 1): ?>
