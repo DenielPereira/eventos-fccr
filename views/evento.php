@@ -19,6 +19,15 @@
                 <b>Endereço: </b><? echo $evento[0][endereco] ?><br>
                 <b>Local: </b><? echo $evento[0][local] ?><br>
                 <b>Data e Horário: </b><? echo $evento[0][inicio] ?><br>
+                <? if(!$registro): ?>
+                <a href="../src/controllers/checkins.php">
+                    <button class="btn btn-success">Vou participar</button>
+                </a>
+                <? else: ?>
+                <a href="../views/checkins.php">
+                    <button class="btn btn-success">Ei, você já está participando!</button>
+                </a>
+                <? endif; ?>
             </p>
         </div>
     </div>

@@ -27,7 +27,6 @@
                     <th scope="col">Dia e Horário</th>
                     <th scope="col">Local</th>
                     <th scope="col">Criador</th>
-                    <th scope="col" class="text-center">Check-in</th>
                 </tr>
             </thead>
             <tbody>
@@ -43,11 +42,6 @@
                         ?>
                     </td>
                     <td><?php echo $rows[4]; ?></td>
-                    <td class="text-center">
-                        <a href="../src/controllers/checkins.php">
-                            <button class="btn btn-success">Vou participar</button>
-                        </a>
-                    </td>
                 </tr>
                 <?php endforeach; ?>
                 <?php else: ?>

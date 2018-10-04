@@ -71,11 +71,9 @@ class EventoDAO {
         }
     }
 
-    public function Checkin($id){
-        $idUsuario = $id;
-
+    public function Checkin($idUsuario, $idEvento){
         try{
-            $sql = "INSERT INTO participantes (eventos_id, usuario_id) VALUES ('$eventoID', '$idUsuario')";
+            $sql = "INSERT INTO participantes (eventos_id, usuario_id) VALUES ('$idEvento', '$idUsuario')";
             $result = $this->_conexaoDB->query($sql);
             $rows = $result->fetchAll();
 
@@ -84,11 +82,30 @@ class EventoDAO {
             } else {
                 return false;
             }
+
+            header('Location: ./../../views/checkins.php');
         } catch(PDOException $e) {
             echo "Falha: {$e}";
         }
 
 
+    }
+
+    public function getParticipante($idUsuario, $idEvento){
+        try{
+            $sql = "SELECT eventos_id, usuario_id FROM participantes WHERE eventos_id = '$idUsuario' AND usuario_id = '$idEvento'";
+            $result = $this->_conexaoDB->query($sql);
+            $rows = $result->fetchAll();
+
+            if ($rows){
+                return $rows;
+            } else {
+                return false;
+            }
+        
+        } catch(PDOException $e) {
+            echo "Falha: {$e->getMessage()}";
+        }
     }
 
 }
