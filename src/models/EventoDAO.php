@@ -74,15 +74,8 @@ class EventoDAO {
     public function Checkin($idUsuario, $idEvento){
         try{
             $sql = "INSERT INTO participantes (eventos_id, usuario_id) VALUES ('$idEvento', '$idUsuario')";
-            $result = $this->_conexaoDB->query($sql);
-            $rows = $result->fetchAll();
-
-            if($rows) {
-                return $rows;
-            } else {
-                return false;
-            }
-
+            
+            $result = $this->_conexaoDB->exec($sql);
             header('Location: ./../../views/checkins.php');
         } catch(PDOException $e) {
             echo "Falha: {$e}";
