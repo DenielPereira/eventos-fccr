@@ -46,7 +46,7 @@
                                 <a class="dropdown-item" href="./../views/evento.php?id=<? echo $rows[0]; ?>">Visualizar</a>
                                 <a class="dropdown-item" href="./../views/alterar-evento.php?id=<? echo $rows[0]; ?>">Editar</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item text-danger" href="#">Excluir</a>
+                                <a class="dropdown-item text-danger" href="./../views/desativar-evento.php?id=<? echo $rows[0]; ?>">Excluir</a>
                             </div>
                         </div>
 

@@ -43,7 +43,7 @@ class EventoDAO {
     public function getAllEvents() {
         try {
             $sql = "SELECT eventos.id, eventos.titulo, DATE_FORMAT(eventos.inicio, '%d/%m/%Y - %H:%i'), eventos.local, usuario.nome FROM eventos
-            jOIN usuario ON eventos.criador = usuario.id;";
+            JOIN usuario ON eventos.criador = usuario.id WHERE eventos.situacao = 0";
             $result = $this->_conexaoDB->query($sql);
             $rows = $result->fetchAll();
             if($rows) {
@@ -100,5 +100,50 @@ class EventoDAO {
             echo "Falha: {$e->getMessage()}";
         }
     }
+
+    public function updateE($evento) {
+        try {
+            session_start();
+            $titulo         = $evento->getTitulo();
+            $local          = $evento->getLocal();
+            $endereco       = $evento->getEndereco();
+            $inicio         = $evento->getInicio();
+            $fim            = $evento->getFim();
+
+            $sql = "UPDATE eventos
+                    SET titulo = '$titulo', local = '$local', 
+                    endereco = '$endereco', inicio = '$inicio', fim = '$fim' 
+                    WHERE id = $_SESSION[idEventoAlt]";
+            $this->_conexaoDB->exec($sql);
+            
+            $_SESSION['titulo']         = $titulo;
+            $_SESSION['local']          = $local;
+            $_SESSION['endereco']       = $endereco;
+            $_SESSION['inicio']         = $inicio;
+            $_SESSION['fim']            = $fim;
+            
+            header('Location: ./../../views/eventos.php');
+        } catch(PDOException $e) {
+            echo "Falha: {$e->getMessage()}";
+        }
+    }
+
+    public function desativarEvento($evento){
+        try {
+            session_start();
+            $situacao   = $evento->getSituacao();
+            
+            $sql = "UPDATE eventos
+                    SET situacao = '$situacao' WHERE id = $_SESSION[idEventoAlt]";
+            $this->_conexaoDB->exec($sql);
+        
+            header('Location: ./../../views/eventos.php');
+            
+        } catch(PDOException $e) {
+            echo "Falha: {$e->getMessage()}";
+        
+        } 
+        }
+    
 
 }
