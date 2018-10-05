@@ -8,6 +8,7 @@ class Evento {
     private $inicio;
     private $fim;
     private $criador;
+    private $situacao;
 
     /* Getters */
     public function getTitulo() {
@@ -34,6 +35,10 @@ class Evento {
         return $this->criador;
     }
 
+    public function getSituacao() {
+        return $this->situacao;
+    }
+
     /* Setters */
     public function setTitulo($titulo) {
         $this->titulo = $titulo;
@@ -57,5 +62,9 @@ class Evento {
 
     public function setCriador($criador) {
         $this->criador = $criador;
+    }
+
+    public function setSituacao($situacao) {
+        return $this->situacao = $situacao;
     }
 }
