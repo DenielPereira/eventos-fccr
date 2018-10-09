@@ -42,7 +42,7 @@ class EventoDAO {
 
     public function getAllEvents() {
         try {
-            $sql = "SELECT eventos.id, eventos.titulo, DATE_FORMAT(eventos.inicio, '%d/%m/%Y - %H:%i'), eventos.local, usuario.nome FROM eventos
+            $sql = "SELECT eventos.id, eventos.titulo, DATE_FORMAT(eventos.inicio, '%d/%m/%Y às %H:%i'), eventos.local, usuario.nome FROM eventos
             JOIN usuario ON eventos.criador = usuario.id WHERE eventos.situacao = 0";
             $result = $this->_conexaoDB->query($sql);
             $rows = $result->fetchAll();

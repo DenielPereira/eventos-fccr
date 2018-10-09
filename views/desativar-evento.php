@@ -13,7 +13,7 @@
 </head>
 <body class="bg-success">
     <div class="block h-100">
-        <div class="card mx-auto mt-5" style="width: 40vw;">
+        <div class="card mx-auto" style="width: 40vw; margin-top: 10%">
             <div class="card-body">
                 <h5 class="card-title">Você tem certeza disso?</h5>
                 <h6 class="card-subtitle mb-2 text-muted">Isso não poderá ser desfeito.</h6>
@@ -26,11 +26,11 @@
                             </label>
                         </div>
                         <div class="button mt-5">
-                            <button class="btn btn-success" onclick="window.location.href='/eventos.php'">Voltar</button>
-                            <button type="submit" class="btn btn-danger ml-3">Sim, eu tenho certeza</button>
+                            <button type="submit" class=" btn btn-danger">Sim, eu tenho certeza</button>
                         </div>
                     </div>
                 </form>
+                <button class="btn btn-success" onclick="window.location.href='/views/eventos.php'">Não, eu quero voltar</button>
             </div>
         </div>
     </div>
