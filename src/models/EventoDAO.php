@@ -56,7 +56,7 @@ class EventoDAO {
 
     public function getChecksInFull($id) {
         try {
-            $sql = "SELECT eventos.id, eventos.titulo, eventos.inicio, eventos.local, usuario.nome FROM eventos
+            $sql = "SELECT eventos.id, eventos.titulo, DATE_FORMAT(eventos.inicio, '%d/%m/%Y às %H:%i'), eventos.local, usuario.nome FROM eventos
             JOIN usuario ON eventos.criador = usuario.id
             JOIN participantes WHERE participantes.Usuario_id = '$id' AND eventos.id = participantes.Eventos_id";
             $result = $this->_conexaoDB->query($sql);

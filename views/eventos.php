@@ -36,19 +36,23 @@
                     <th scope="row"><?php echo $rows[0]; ?></th>
                     <td>
 
-                        <div class="dropdown show">
-                            <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <?php echo $rows[1]; ?>
-                            </a>
+                        <?php if($_SESSION['admin'] == 1): ?>    
+                            <div class="dropdown show">
+                                <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <?php echo $rows[1]; ?>
+                                </a>
 
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                <h6 class="dropdown-header">Ações</h6>
-                                <a class="dropdown-item" href="./../views/evento.php?id=<? echo $rows[0]; ?>">Visualizar</a>
-                                <a class="dropdown-item" href="./../views/alterar-evento.php?id=<? echo $rows[0]; ?>">Editar</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item text-danger" href="./../views/desativar-evento.php?id=<? echo $rows[0]; ?>">Excluir</a>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                    <h6 class="dropdown-header">Ações</h6>
+                                    <a class="dropdown-item" href="./../views/evento.php?id=<? echo $rows[0]; ?>">Visualizar</a>
+                                    <a class="dropdown-item" href="./../views/alterar-evento.php?id=<? echo $rows[0]; ?>">Editar</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item text-danger" href="./../views/desativar-evento.php?id=<? echo $rows[0]; ?>">Excluir</a>
+                                </div>
                             </div>
-                        </div>
+                        <?php else: ?>
+                            <a href="./../views/evento.php?id=<? echo $rows[0]; ?>"><?php echo $rows[1]; ?></a> 
+                        <?php endif; ?> 
 
                     </td>
                     <td><?php echo $rows[2]; ?></td>

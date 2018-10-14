@@ -31,7 +31,7 @@ $mail->addAttachment('/tmp/image.jpg', 'nome.jpg');
 if(!$mail->send()) {
   header('Location: /views/failedmail.php?'. $mail->ErrorInfo);
 } else {
-  echo 'Mensagem enviada.';
+  header('Location: /views/successmail.php?');
 }
 
 //debugger
