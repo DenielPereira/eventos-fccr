@@ -6,6 +6,8 @@ class Usuario {
     private $sobrenome;
     private $email;
     private $senha;
+    private $nascimento;
+    private $sexo;
     private $admin;
 
     /* Getters */
@@ -23,6 +25,14 @@ class Usuario {
 
     public function getSenha() {
         return $this->senha;
+    }
+
+    public function getNascimento() {
+        return $this->nascimento;
+    }
+
+    public function getSexo() {
+        return $this->sexo;
     }
 
     public function getAdmin() {
@@ -44,6 +54,14 @@ class Usuario {
 
     public function setSenha($senha) {
         $this->senha = $senha;
+    }
+
+    public function setNascimento($nascimento) {
+        $this->nascimento = $nascimento;
+    }
+
+    public function setSexo($sexo) {
+        $this->sexo = $sexo;
     }
 
     public function setAdmin($admin) {

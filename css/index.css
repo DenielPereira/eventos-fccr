@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i');
+
+body{
+    font-family: 'Lato', sans-serif !important;
+    overflow-x: hidden;
+}
+
+a{
+    text-decoration: none !important;
+}
+
+.vh-100{
+    height: 100vh !important;
+}
+
+.w-90{
+    width: 90% !important;
+}
+
+.w-80{
+    width: 80% !important;
+}
+
+.bg-green{
+    background-color: #27ae60;
+}
+
+.block {
+    text-align: center;
+}
+  
+.block:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    margin-right: -0.25em; 
+}
+
+.centered {
+    display: inline-block;
+    vertical-align: middle;
+    width: 300px;
+}
+
+.btn-link{
+    color: white !important;
+}
+.btn-link:hover{
+    color: white;
+    font-weight: 700;
+    text-decoration: none !important;
+}
+.btn-link:focus{
+    color: white;
+    font-weight: 700;
+    text-decoration: none !important;
+    transition: font-weight .15s ease-in-out;
+}
+.btn-link:active{
+    color: white;
+    font-weight: 700;
+    text-decoration: none !important;
+    transition: font-weight .15s ease-in-out;
+}
+
+.profile img {
+    width: 50px;
+    border-radius: 50%;
+}
+
+.jumbotron {
+    padding: 35px 35px !important;
+}
+
+.card:hover{
+    border-color: #00554f;
+    color: #00554f;
+    transition: color .15s ease-in-out, border-color .15s ease-in-out;
+}
+
+.fa-check{
+    color: green !important;
+}
+
+.fa-times{
+    color: grey !important;
+}
+
+
+.comentario{
+    border-top: none;
+    border-left: none;
+    border-bottom-right-radius: 5px;
+}
+.comentario:focus{
+    outline: none !important;
+    border-color: #27ae60;
+    transition: border-color .15s ease-in-out;
+}
+.toggleMenu {
+    display: initial;
+    transition: border-color .15s ease-in-out;
+}
+.coment:hover .btn-send{
+    display: initial;
+    transition: border-color .15s display .15s ease-in-out;
+}
+input.comentario:focus + button.btn-send{
+    display: initial;
+    transition: border-color .15s ease-in-out;
+}
+button.btn-send{
+    display: none;
+    display: true;
+    cursor: pointer;
+    color: #27ae60;
+    background-color: transparent;
+    border: none;
+}
