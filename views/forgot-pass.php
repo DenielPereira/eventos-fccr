@@ -12,7 +12,7 @@
                 </div>
             </div>
             <div class="col-lg-8 block">
-                <form class="w-50 mx-auto centered" action="../src/controllers/login.php" method="POST">
+                <form class="w-50 mx-auto centered" action="../mailer.php" method="POST">
                     <h4>Esqueci minha senha</h4>
                     <div class="row">
                         <div class="col">
