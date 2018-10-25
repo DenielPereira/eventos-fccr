@@ -12,13 +12,13 @@
                 </div>
             </div>
             <div class="col-lg-8 block">
-                <form class="w-50 mx-auto centered" action="../mailer.php" method="POST">
+                <form class="w-50 mx-auto centered" action="../src/controllers/verificaUsuario.php" method="POST">
                     <h4>Esqueci minha senha</h4>
                     <div class="row">
                         <div class="col">
                             <div class="form-group text-left mt-5">
                                 <label for="nome">Nome</label>
-                                <input name="nome" type="text" class="form-control" id="nome" placeholder="Fulano">
+                                <input name="nome" type="text" class="form-control" id="nome" placeholder="Fulano" required>
                             </div>
                         </div>
                         <div class="col">
@@ -30,7 +30,7 @@
                     </div>
                     <div class="form-group text-left">
                         <label for="Email">Email</label>
-                        <input name="email" type="email" class="form-control" id="Email" aria-describedby="emailHelp" placeholder="nome.sobrenome@fccr.sp.gov.br">
+                        <input name="email" type="email" class="form-control" id="Email" aria-describedby="emailHelp" placeholder="nome.sobrenome@fccr.sp.gov.br" required>
                         <small id="emailHelp" class="form-text text-muted text-right">
                             <a href="../views/index.php">Não precisa, eu lembrei a minha senha.</a>
                         </small>                  

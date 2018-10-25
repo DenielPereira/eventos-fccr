@@ -1,5 +1,6 @@
 <?php
 
+
 class UsuarioDAO {
 
     private $conexaoDB;
@@ -105,6 +106,30 @@ class UsuarioDAO {
             if($rows) {
                 return $rows;
             } 
+
+        } catch(PDOException $e) {
+                echo "Falha: {$e->getMessage()}";
+        }
+    }
+
+    public function isUser($email, $nome) {
+        try {
+            $sql = "SELECT nome, sobrenome, email, senha
+                    FROM usuario WHERE email = '$email' AND nome = '$nome'";
+            $result = $this->_conexaoDB->query($sql);
+            $rows = $result->fetchAll();
+
+            if($rows[0]) {
+                session_start();
+                $_SESSION['nome']           = $rows[0][nome];
+                $_SESSION['sobrenome']      = $rows[0][sobrenome];
+                $_SESSION['email']          = $rows[0][email];
+                $_SESSION['senha']          = $rows[0][senha];
+                header('Location: ../../mailer.php'); 
+            } else {
+                echo "<script>alert ('Ops, a gente não achou ninguem com esses dados, tem certeza que tá tudo certo?');</script>";
+                echo "<script>javascript:history.back()</script>";
+            }
 
         } catch(PDOException $e) {
                 echo "Falha: {$e->getMessage()}";

@@ -16,9 +16,10 @@ $parteurl = explode('?', $url);
             <div class="card-body">
                 <h5 class="card-title text-danger">Eita! Algo de errado aconteceu.</h5>
                 <h6 class="card-subtitle mb-2 text-muted">O e-mail de recuperação não pôde ser enviado.</h6>
-                <h6 class="card-subtitle mb-2 text-muted">Motivo: <? echo $parteurl[1] ?></h6>
-                <p>Você precisa da ajuda de um administrador desse sistema. Reporte esse erro ao chefe do seu setor.</p>    
-                <button class="btn btn-success" onclick="window.location.href='/views/forgot-pass.php'">Voltar</button>
+                <h6 class="card-subtitle mb-2 text-muted small">Motivo: <? echo $parteurl[1] ?></h6>
+                <p>Um relatório foi enviado para o administrador do sistema. <br>
+                Espere um pouco enquanto a gente resolve isso pra você ;)</p>    
+                <button class="btn btn-success" onclick="javascript:history.back()">Voltar</button>
             </div>
         </div>
     </div>

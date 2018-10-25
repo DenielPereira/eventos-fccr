@@ -36,10 +36,6 @@
                             <a href="../views/forgot-pass.php">Esqueceu a sua senha?</a>
                         </small>
                     </div>
-                    <div class="form-check text-left">
-                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                        <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                    </div>
                     <button type="submit" class="btn btn-success">Entrar</button>
                 </form>
             </div>
