@@ -16,7 +16,8 @@
         <div class="row vh-100">
             <div class="col-lg-4 bg-success block">
                 <div class="text-center text-white centered">
-                    <h1>Lorem Ipsum</h1>
+                    <h1>Eventos FCCR</h1>
+                    <img src="../img/fccr_horizontal_white.png" width="150">
                 </div>
             </div>
             <div class="col-lg-8 block">
@@ -35,10 +36,6 @@
                         <small id="emailHelp" class="form-text text-muted text-right">
                             <a href="../views/forgot-pass.php">Esqueceu a sua senha?</a>
                         </small>
-                    </div>
-                    <div class="form-check text-left">
-                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                        <label class="form-check-label" for="exampleCheck1">Check me out</label>
                     </div>
                     <button type="submit" class="btn btn-success">Entrar</button>
                 </form>

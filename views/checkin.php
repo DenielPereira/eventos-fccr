@@ -24,7 +24,10 @@
                         <label class="label">
                             <i class="fas fa-images"></i>
                             <span class="title">Adicionar Fotos</span>
-                            <input type="file"/>
+                            <form action="../src/controllers/uploadImages.php" method="POST" enctype="multipart/form-data">
+                                <input type="file" name="arquivo[]" required multiple/>
+                                <input type="submit" name="enviar" value="Enviar" />
+                            </form>
                         </label>
                     </div>                  
                 </div>
@@ -38,9 +41,9 @@
 
                     <div class="imagem">
                         <?php if($_SESSION['sexo'] == 'm'): ?> 
-                            <img src="https://www.w3schools.com/howto/img_avatar.png" class="ml-1 rounded-circle" width="50" height="50"> 
+                            <img src="../img/img_avatar.png" class="ml-1 rounded-circle" width="50" height="50"> 
                         <?php else: ?>
-                            <img src="https://www.w3schools.com/howto/img_avatar2.png" class="ml-1 rounded-circle" width="50" height="50">
+                            <img src="../img/img_avatar2.png" class="ml-1 rounded-circle" width="50" height="50">
                         <?php endif; ?> 
                     </div>
 

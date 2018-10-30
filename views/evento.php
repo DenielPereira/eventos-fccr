@@ -1,4 +1,5 @@
-<?php 
+<?php
+    error_reporting(E_ERROR);
     session_start(); 
     if(!$_SESSION['logged']) header('Location: ./index.php');
 
@@ -14,11 +15,11 @@
     <?php include './partials/navbar.php';?>
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
-            <h1 class="display-4"><? echo $evento[0][titulo] ?></h1>
+            <h1 class="display-4"><? echo $evento[0]['titulo'] ?></h1>
             <p class="lead">
-                <b>Endereço: </b><? echo $evento[0][endereco] ?><br>
-                <b>Local: </b><? echo $evento[0][local] ?><br>
-                <b>Data e Horário: </b><? echo $evento[0][inicio] ?><br>
+                <b>Endereço: </b><? echo $evento[0]['endereco'] ?><br>
+                <b>Local: </b><? echo $evento[0]['local'] ?><br>
+                <b>Data e Horário: </b><? echo $evento[0]['inicio'] ?><br>
         
                 <? if(!$registro): ?>
                 <a href="../src/controllers/checkins.php">
