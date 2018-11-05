@@ -133,6 +133,28 @@ ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
 
+-- -----------------------------------------------------
+-- Table `eventos_fccr`.`permissao`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `eventos_fccr`.`permissao` (
+  `Eventos_id` INT(11) NOT NULL,
+  `Usuario_id` INT(11) NOT NULL,
+  INDEX `fk_eventos_has_usuario_usuario1_idx` (`Usuario_id` ASC),
+  INDEX `fk_eventos_has_usuario_eventos1_idx` (`Eventos_id` ASC),
+  CONSTRAINT `fk_eventos_has_usuario_eventos1`
+    FOREIGN KEY (`Eventos_id`)
+    REFERENCES `eventos_fccr`.`eventos` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_eventos_has_usuario_usuario1`
+    FOREIGN KEY (`Usuario_id`)
+    REFERENCES `eventos_fccr`.`usuario` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;
+
+
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
