@@ -141,12 +141,12 @@ CREATE TABLE IF NOT EXISTS `eventos_fccr`.`permissao` (
   `Usuario_id` INT(11) NOT NULL,
   INDEX `fk_eventos_has_usuario_usuario1_idx` (`Usuario_id` ASC),
   INDEX `fk_eventos_has_usuario_eventos1_idx` (`Eventos_id` ASC),
-  CONSTRAINT `fk_eventos_has_usuario_eventos1`
+  CONSTRAINT `fk_eventos_has_usuario_eventos`
     FOREIGN KEY (`Eventos_id`)
     REFERENCES `eventos_fccr`.`eventos` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
-  CONSTRAINT `fk_eventos_has_usuario_usuario1`
+  CONSTRAINT `fk_eventos_has_usuario_usuario`
     FOREIGN KEY (`Usuario_id`)
     REFERENCES `eventos_fccr`.`usuario` (`id`)
     ON DELETE NO ACTION
