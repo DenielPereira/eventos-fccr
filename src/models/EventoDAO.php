@@ -9,10 +9,6 @@ class EventoDAO {
         return $this->ultimoid;
     }
 
-    public function setLastId($id){
-        $this->ultimoid = $id;
-    }
-
     public function __construct($db) {
         $this->_conexaoDB = $db;
     }
