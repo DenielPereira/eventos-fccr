@@ -35,8 +35,6 @@ $mail->isHTML(true);
 $mail->Subject = 'Lembrete de senha para ' . $nome;
 $mail->Body    = $conteudo;
 
-//'Olá ' . $nome . ' ' . $sobrenome . '.' . '<br> A sua senha é ' . $senha;
-
 /* ================= Opcionais como anexo e corpo alternativo ===================
 $mail->AltBody = 'Para visualizar essa mensagem acesse http://site.com.br/mail';
 $mail->addAttachment('/tmp/image.jpg', 'nome.jpg');

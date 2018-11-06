@@ -3,6 +3,15 @@
 class EventoDAO {
 
     private $conexaoDB;
+    private $ultimoid;
+
+    public function getLastId(){
+        return $this->ultimoid;
+    }
+
+    public function setLastId($id){
+        $this->ultimoid = $id;
+    }
 
     public function __construct($db) {
         $this->_conexaoDB = $db;
@@ -21,7 +30,8 @@ class EventoDAO {
                 VALUES ('$titulo', '$local', '$endereco', '$inicio', '$fim', '$criador')";
             
             $this->_conexaoDB->exec($sql);
-            header('Location: ./../../views/eventos.php');
+            $this->ultimoid = $this->_conexaoDB->lastInsertId();
+            return $this->ultimoid;
         } catch(PDOException $e) {
             echo "Falha: {$e}";
         }

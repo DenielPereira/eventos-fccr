@@ -3,6 +3,7 @@
     if(!$_SESSION['logged']) header('Location: ./index.php');
     
     include_once("./../src/controllers/variables.php");
+    include_once("./../src/controllers/usuarios.php");
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -49,6 +50,30 @@
                                 <input name="fim" type="datetime-local" class="form-control" id="fim">
                             </div>
                         </div>
+                    </div>
+                    <button type="button" class="btn btn-primary mt-3" data-toggle="modal" data-target="#exampleModalCenter">
+                        Launch demo modal
+                    </button>
+                    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <?php foreach($users as $rows): ?>
+                                <input type="checkbox" name="user[]" value=<? echo $rows[id]; ?>><? echo " " . $rows[nome] . " " . $rows[sobrenome] ; ?><br>
+                            <?php endforeach; ?>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                        </div>
+                    </div>
                     </div>
                     <button type="submit" class="btn btn-success mt-3">Criar Evento</button>
                 </form>
