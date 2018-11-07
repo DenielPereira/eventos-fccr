@@ -18,9 +18,13 @@
             <p class="lead">Esses são os eventos que estão acontecendo.</p>
         </div>
     </div>
-    <div class="text-right mr-5 mb-2">
-        <a href="./../views/cadastro-eventos.php">Adicionar evento</a>
-    </div>
+
+    <?php if($_SESSION['admin'] == 1): ?> 
+        <div class="text-right mr-5 mb-2">
+            <a href="./../views/cadastro-eventos.php">Adicionar evento</a>
+        </div>
+    <?php endif; ?>
+
     <div class="px-5 mt-auto">
         <table class="table table-hover">
             <thead>
@@ -33,17 +37,16 @@
                 </tr>
             </thead>
             <tbody>
-<<<<<<< HEAD
 
-            <?php $i = 0 ?>
-
-=======
             <?php if($_SESSION['admin'] == 1): ?>   
-            <?php if($allEvents):?>
-                <?php foreach($allEvents as $rows): ?>
-                <tr>
-                    <th scope="row"><?php echo $rows[0]; ?></th>
-                    <td>                      
+                <?php if($allEvents):?>
+                    <?php $i = 0 ?>
+
+                        <?php foreach($allEvents as $rows): ?>
+
+                        <tr>
+                             <th scope="row"><?php echo $i+1; ?></th>
+                            <td>                      
                             <div class="dropdown show">
                                 <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <?php echo $rows[1]; ?>
@@ -57,16 +60,18 @@
                                     <a class="dropdown-item text-danger" href="./../views/desativar-evento.php?id=<? echo $rows[0]; ?>">Excluir</a>
                                 </div>
                             </div>
-                    </td>
-                    <td><?php echo $rows[2]; ?></td>
-                    <td>
-                        <?php
-                            echo $rows[3];
-                        ?>
-                    </td>
-                    <td><?php echo $rows[4]; ?></td>
-                </tr>
-                <?php endforeach; ?>
+                                    </td>
+                            <td><?php echo $rows[2]; ?></td>
+                            <td>
+                                <?php
+                                    echo $rows[3];
+                                ?>
+                            </td>
+                            <td><?php echo $rows[4]; ?></td>
+                        </tr>
+
+                    <?php $i++ ?>
+                    <?php endforeach; ?>
                 <tr>
                     <th scope="row"><a href="./../views/cadastro-eventos.php"><i class="fas fa-plus text-success"></i></a></th>
                     <td class="text-muted">Adicionar Evento</td>
@@ -85,7 +90,6 @@
             <?php endif; ?>
 
             <?php else: ?>
->>>>>>> 26f1bee63685f7a4ed6e08dd35613b1d33a7362d
             <?php if($eventos):?>
                 <?php foreach($eventos as $rows): ?>
                 <tr>
