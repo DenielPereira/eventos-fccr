@@ -15,13 +15,15 @@ class ImagemDAO {
             $conteudo   = $imagem->getConteudo();
 
              if(isset($conteudo)){
-                $extensao = strtolower(substr($nome['name'], -4)); //pega a extensao do arquivo
-                $novo_nome = md5(time()) . $extensao; //define o nome do arquivo
-                $diretorio = "upload/"; //define o diretorio para onde enviaremos o arquivo
+                $extensao    = strtolower(substr($nome['name'], -4)); //pega a extensao do arquivo
+                $novo_nome   = md5(time()) . $extensao; //define o nome do arquivo
+                $diretorio   = "upload/"; //define o diretorio para onde enviaremos o arquivo
                 move_uploaded_file($nome['tmp_name'], $diretorio.$novo_nome); //efetua o upload
 
                 $sql = "INSERT INTO fotos (nome, conteudo)
                     VALUES ('$novo_nome', '$conteudo')";
+
+                echo $sql;
 
                  if($mysqli->query($sql_code))
                     $msg = "Arquivo enviado com sucesso!";

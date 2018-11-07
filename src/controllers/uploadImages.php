@@ -9,7 +9,7 @@ $db = new Database();
 $imagem = new Imagem();
 $imagemDAO = new ImagemDAO($db);
 
-$imagem->setNome($_POST['nome']);
-$imagem->setConteudo($_FILES['arquivo[]']);
+$imagem->setNome($_FILES['arquivo']['name']);
+$imagem->setConteudo($_FILES['arquivo']);
 
 $imagemDAO->uploadImage($imagem);

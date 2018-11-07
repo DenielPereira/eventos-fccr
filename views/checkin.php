@@ -3,6 +3,9 @@
     if(!$_SESSION['logged']) header('Location: ./index.php');
 
     include_once("./../src/controllers/variables.php");
+
+    $url = $_SERVER['REQUEST_URI'];
+    $parteurl = explode('=', $url);
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -24,8 +27,8 @@
                         <label class="label">
                             <i class="fas fa-images"></i>
                             <span class="title">Adicionar Fotos</span>
-                            <form action="../src/controllers/uploadImages.php" method="POST" enctype="multipart/form-data">
-                                <input type="file" name="arquivo[]" required multiple/>
+                            <form action="../src/controllers/uploadImageFtp.php?id=<?php echo $url ?>" method="POST" enctype="multipart/form-data">
+                                <input type="file" name="arquivo" accept="image/png, image/jpeg" required multiple/>
                                 <input type="submit" name="enviar" value="Enviar" />
                             </form>
                         </label>
@@ -50,7 +53,7 @@
                     <div class="coment w-90">
                         <form action="./../src/controllers/cadastroComentario.php" method="POST">
                         <input typ="text" name="id" value="<? echo $_GET['id'] ?>" hidden></input>
-                        <input type="text" name="comentario" id="comentario" placeholder="O que você achou do evento?" class="w-80 ml-2 mt-3 comentario">
+                        <input type="text" name="comentario" id="comentario" placeholder="O que você achou do evento?" class="w-80 ml-2 mt-3 comentario" required>
                         <button type="submit" class="btn-send" id="btn-send"><i class="fas fa-angle-right"></i></button>
                         </form>
                     </div>

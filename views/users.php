@@ -35,9 +35,10 @@
                 </tr>
             </thead>
             <tbody>
+            <?php $i = 0 ?>
                 <?php foreach($users as $rows): ?>
                 <tr>
-                    <th scope="row"><? echo $rows[0]; ?></th>
+                    <th scope="row"><? echo $i+1 ?></th>
                     <td>
 
                         <a href=""></a>
@@ -69,6 +70,7 @@
                         <?php endif; ?>     
                     </td>
                 </tr>
+                <?php $i++ ?>
                 <?php endforeach; ?>
                 <tr>
                     <th scope="row"><a href="./../views/cadastro.php"><i class="fas fa-plus"></i></a></th>

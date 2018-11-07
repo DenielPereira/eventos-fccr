@@ -30,10 +30,13 @@
                 </tr>
             </thead>
             <tbody>
+
+            <?php $i = 0 ?>
+
             <?php if($eventos):?>
                 <?php foreach($eventos as $rows): ?>
                 <tr>
-                    <th scope="row"><?php echo $rows[0]; ?></th>
+                    <th scope="row"><?php echo $i+1?></th>
                     <td>
 
                         <?php if($_SESSION['admin'] == 1): ?>    
@@ -63,6 +66,9 @@
                     </td>
                     <td><?php echo $rows[4]; ?></td>
                 </tr>
+
+                <?php $i++ ?>
+
                 <?php endforeach; ?>
                 <?php else: ?>
                     <div class="row d-flex justify-content-center">                      
