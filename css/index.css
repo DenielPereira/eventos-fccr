@@ -119,6 +119,9 @@ button.btn-send{
     border: none;
 }
 
+.navbar-nav > li.nav-item.active > a.nav-link {
+    color:white;
+}
 
 /*  
 *   classes do slideshow a seguir
