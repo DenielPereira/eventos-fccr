@@ -8,3 +8,4 @@ $db = new Database();
 $eventoDAO = new EventoDAO($db);
 
 $eventos = $eventoDAO->getAllEventsForUser();
+$allEvents = $eventoDAO->getAllEvents();

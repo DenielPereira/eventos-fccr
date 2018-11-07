@@ -30,6 +30,53 @@
                 </tr>
             </thead>
             <tbody>
+            <?php if($_SESSION['admin'] == 1): ?>   
+            <?php if($allEvents):?>
+                <?php foreach($allEvents as $rows): ?>
+                <tr>
+                    <th scope="row"><?php echo $rows[0]; ?></th>
+                    <td>                      
+                            <div class="dropdown show">
+                                <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <?php echo $rows[1]; ?>
+                                </a>
+
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                    <h6 class="dropdown-header">Ações</h6>
+                                    <a class="dropdown-item" href="./../views/evento.php?id=<? echo $rows[0]; ?>">Visualizar</a>
+                                    <a class="dropdown-item" href="./../views/alterar-evento.php?id=<? echo $rows[0]; ?>">Editar</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item text-danger" href="./../views/desativar-evento.php?id=<? echo $rows[0]; ?>">Excluir</a>
+                                </div>
+                            </div>
+                    </td>
+                    <td><?php echo $rows[2]; ?></td>
+                    <td>
+                        <?php
+                            echo $rows[3];
+                        ?>
+                    </td>
+                    <td><?php echo $rows[4]; ?></td>
+                </tr>
+                <?php endforeach; ?>
+                <tr>
+                    <th scope="row"><a href="./../views/cadastro-eventos.php"><i class="fas fa-plus text-success"></i></a></th>
+                    <td class="text-muted">Adicionar Evento</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <?php else: ?>
+                    <div class="row d-flex justify-content-center">                      
+                        <img src="../assets/images/avatar_f_suport.png" class="rounded-circle" width="50" height="50">                     
+                        <div class="ml-2">
+                            <p class="mb-0 text-success">Suporte - FCCR</p>
+                            <p>Ainda não foram adicionados eventos aqui <i class="far fa-frown" ></i></p>
+                        </div>                                  
+                    </div>
+            <?php endif; ?>
+
+            <?php else: ?>
             <?php if($eventos):?>
                 <?php foreach($eventos as $rows): ?>
                 <tr>
@@ -72,16 +119,8 @@
                             <p>Ainda não foram adicionados eventos aqui <i class="far fa-frown" ></i></p>
                         </div>                                  
                     </div>
-            <?php endif; ?>   
-            <? if($_SESSION['admin'] == 1): ?> 
-                <tr>
-                    <th scope="row"><a href="./../views/cadastro-eventos.php"><i class="fas fa-plus text-success"></i></a></th>
-                    <td class="text-muted">Adicionar Evento</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-            <? endif; ?>  
+                <?php endif; ?>   
+            <?php endif; ?>
             </tbody>
         </table>
     </div>
