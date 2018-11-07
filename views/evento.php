@@ -23,7 +23,7 @@
         
                 <? if(!$registro): ?>
                 <a href="../src/controllers/checkins.php">
-                    <button class="btn btn-success">Vou participar</button>
+                    <button class="btn btn-success">Fazer check-in</button>
                 </a>
                 <? else: ?>
                 <a class="text-success" href="../views/checkins.php">
@@ -33,10 +33,33 @@
             </p>
         </div>
     </div>
-     <div class="row">
+    <div class="row">
             <div class="col-lg-6 border-right">
                 <div class="text-center mb-3">
-                    <img src="https://loremflickr.com/600/400/show,blues" class="rounded mx-auto d-block">                    
+                    <div class="slideshow-container">
+
+                        <div class="mySlides fadeInOut">
+                            <div class="numbertext">1 / 3</div>
+                            <img src="https://loremflickr.com/600/400/orchestra" class="rounded mx-auto d-block" style="width:100%">                    
+                            <div class="text">Caption Text</div>
+                            </div>
+
+                            <div class="mySlides fadeInOut">
+                            <div class="numbertext">2 / 3</div>
+                            <img src="https://loremflickr.com/600/400/music,piano" class="rounded mx-auto d-block" style="width:100%">                    
+                            <div class="text">Caption Two</div>
+                            </div>
+
+                            <div class="mySlides fadeInOut">
+                            <div class="numbertext">3 / 3</div>
+                            <img src="https://loremflickr.com/600/400/music,violin" class="rounded mx-auto d-block" style="width:100%">                    
+                            <div class="text">Caption Three</div>
+                        </div>
+                        <div class="text-left">
+                            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                        </div> 
+                    </div>         
                 </div>
             </div>
             <div class="col-lg-6">
