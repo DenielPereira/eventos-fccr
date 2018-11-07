@@ -13,11 +13,8 @@ $db = new Database();
 $imagem = new Imagem();
 $imagemDAO = new ImagemDAO($db);
 
-$lastId = $db->lastInsertId();
-
 $imagem->setNome($_FILES['arquivo']['name']);
 $imagem->setConteudo($_FILES['arquivo']);
-$imagem->setFotosID($lastId);
 $imagem->setEventos_id($_GET['id']);
 $imagem->setUsuarioId($_SESSION['id']);
 

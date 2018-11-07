@@ -19,11 +19,8 @@ class ImagemDAO {
 
             define('TAMANHO_MAXIMO', (2 * 1024 * 1024));
 
-            $this->lastId = $this->_conexaoDB->lastInsertId();
-
             $nome         = $imagem->getNome();
             $conteudo     = $imagem->getConteudo();
-            $fotos_id     = $imagem->getFotosID();
             $Eventos_id   = $imagem->getEventos_id();
             $Usuario_id   = $imagem->getUsuarioId();
 
@@ -45,16 +42,23 @@ class ImagemDAO {
                 
                 // Transformando foto em dados (binário)
                 $image = file_get_contents($conteudo['tmp_name']);
-            
-            $sql = "INSERT INTO fotos (nome, conteudo)
-            VALUES ('$nome', '$image');";
 
+            // Usando método prepare do PDO
+            $stmt = $this->_conexaoDB->prepare('INSERT INTO fotos (nome, conteudo) VALUES (:nome, :conteudo)');
+ 
+            // Definindo parâmetros
+            $stmt->bindValue(':nome', $nome, PDO::PARAM_STR);
+            $stmt->bindValue(':conteudo', $image, PDO::PARAM_LOB);
+            $stmt->execute();
+
+            // Pegando o ID do último INSERT na tabela Fotos
+            $this->lastId = $this->_conexaoDB->lastInsertId();
+            $idfoto = $this->lastId;
+
+            // Fazendo INSERT na tabela Fotos_evento
             $sql2= "INSERT INTO fotos_evento (fotos_id, Eventos_id, Usuario_id)
-            VALUES ('$fotos_id', '$Eventos_id', '$Usuario_id'); ";
-
-            echo $sql;
-        $this->_conexaoDB->exec($sql);
-        $this->_conexaoDB->exec($sql2);
+            VALUES ('$idfoto', '$Eventos_id', '$Usuario_id')";
+            $this->_conexaoDB->exec($sql2);
 
     } catch(PDOException $e) {
         echo "Falha: {$e}";
