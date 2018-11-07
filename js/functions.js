@@ -32,3 +32,17 @@ function showSlides(n) {
   dots[slideIndex-1].className += " active";
 }
 
+/*
+function ClearBoxes() {
+  for (i = 0; i < document.forms.selecao.elements.length; i++)
+    if (document.forms.selecao.elements[i].type == "checkbox")
+      document.forms.selecao.elements[i].checked = false;
+}
+*/
+
+function ClearBoxes() {
+  var inputs = $('input[type=checkbox]');
+
+  inputs.attr('checked', false);
+  inputs.prop('checked', false);
+}

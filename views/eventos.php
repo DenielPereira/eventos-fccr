@@ -18,6 +18,9 @@
             <p class="lead">Esses são os eventos que estão acontecendo.</p>
         </div>
     </div>
+    <div class="text-right mr-5 mb-2">
+        <a href="./../views/cadastro-eventos.php">Adicionar evento</a>
+    </div>
     <div class="px-5 mt-auto">
         <table class="table table-hover">
             <thead>
