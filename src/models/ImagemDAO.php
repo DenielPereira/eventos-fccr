@@ -17,6 +17,8 @@ class ImagemDAO {
     public function uploadImage($imagem) {
         try {
 
+            define('TAMANHO_MAXIMO', (2 * 1024 * 1024));
+
             $this->lastId = $this->_conexaoDB->lastInsertId();
 
             $nome         = $imagem->getNome();
@@ -24,14 +26,33 @@ class ImagemDAO {
             $fotos_id     = $imagem->getFotosID();
             $Eventos_id   = $imagem->getEventos_id();
             $Usuario_id   = $imagem->getUsuarioId();
+
+            $tipo = $conteudo['type'];
+            $tamanho = $conteudo['size'];
+
+                if(!preg_match('/^image\/(pjpeg|jpeg|png|gif|bmp)$/', $tipo))
+                {
+                    echo ('Isso não é uma imagem válida');
+                    exit;
+                }
+                
+                // Tamanho
+                if ($tamanho > TAMANHO_MAXIMO)
+                {
+                    echo ('A imagem deve possuir no máximo 2 MB');
+                    exit;
+                }
+                
+                // Transformando foto em dados (binário)
+                $image = file_get_contents($conteudo['tmp_name']);
             
             $sql = "INSERT INTO fotos (nome, conteudo)
-            VALUES ('$nome', '$conteudo');";
+            VALUES ('$nome', '$image');";
 
             $sql2= "INSERT INTO fotos_evento (fotos_id, Eventos_id, Usuario_id)
             VALUES ('$fotos_id', '$Eventos_id', '$Usuario_id'); ";
 
-            echo $sql2;
+            echo $sql;
         $this->_conexaoDB->exec($sql);
         $this->_conexaoDB->exec($sql2);
 
