@@ -7,4 +7,5 @@ include_once(__DIR__ . "/../classes/Database.php");
 $db = new Database();
 $eventoDAO = new EventoDAO($db);
 
-$eventos = $eventoDAO->getAllEvents();
+$eventos = $eventoDAO->getAllEventsForUser();
+$allEvents = $eventoDAO->getAllEvents();

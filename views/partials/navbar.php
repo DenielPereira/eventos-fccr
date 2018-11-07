@@ -13,15 +13,18 @@
                 <a class="nav-link" href="./../views/index.php">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="./../views/eventos.php">Eventos</a>
+                <a class="nav-link" href="./../views/eventos.php">Eventos </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="./../views/checkins.php">Meus Eventos</a>
             </li>
+            
             <? if($_SESSION['admin'] == 1): ?>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./../views/users.php">Gerenciar Usuários</a>
-                    </li>                      
+
+            <li class="nav-item">
+                <a class="nav-link" href="./../views/users.php">Gerenciar Usuários</a>
+            </li> 
+
             <? endif; ?>
         </ul>
         <div class="profile form-inline">

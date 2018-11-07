@@ -9,10 +9,6 @@ class EventoDAO {
         return $this->ultimoid;
     }
 
-    public function setLastId($id){
-        $this->ultimoid = $id;
-    }
-
     public function __construct($db) {
         $this->_conexaoDB = $db;
     }
@@ -52,8 +48,27 @@ class EventoDAO {
 
     public function getAllEvents() {
         try {
-            $sql = "SELECT eventos.id, eventos.titulo, DATE_FORMAT(eventos.inicio, '%d/%m/%Y às %H:%i'), eventos.local, usuario.nome FROM eventos
-            JOIN usuario ON eventos.criador = usuario.id WHERE eventos.situacao = 0";
+            $sql = "SELECT eventos.id, eventos.titulo, DATE_FORMAT(eventos.inicio, '%d/%m/%Y às %H:%i'), 
+            eventos.local, usuario.nome FROM eventos 
+            JOIN usuario ON eventos.criador = usuario.id 
+            WHERE eventos.situacao = 0";
+            $result = $this->_conexaoDB->query($sql);
+            $rows = $result->fetchAll();
+            if($rows) {
+                return $rows;
+            } 
+        } catch(PDOException $e) {
+            echo "Falha: {$e}";
+        }
+    }
+
+    public function getAllEventsForUser() {
+        try {
+            $sql = "SELECT eventos.id, eventos.titulo, DATE_FORMAT(eventos.inicio, '%d/%m/%Y às %H:%i'), 
+            eventos.local, usuario.nome, permissao.Usuario_id FROM eventos 
+            JOIN usuario ON eventos.criador = usuario.id  
+            JOIN permissao ON eventos.id = permissao.Eventos_id 
+            WHERE eventos.situacao = 0 AND Usuario_id = $_SESSION[id]";
             $result = $this->_conexaoDB->query($sql);
             $rows = $result->fetchAll();
             if($rows) {

@@ -22,8 +22,7 @@ $lastid = $eventoDAO->getLastId();
 
 
 foreach ($_POST['user'] as $valor) {
-  $sql = "INSERT INTO permissao (Eventos_id, Usuario_id)
-  VALUES ('$lastid', '$valor');";
+  $sql = "INSERT INTO permissao (Eventos_id, Usuario_id) VALUES ('$lastid', '$valor')";
   $eventoDAO->_conexaoDB->exec($sql);
 
 }

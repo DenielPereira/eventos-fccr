@@ -27,38 +27,38 @@
                     <div class="form-group text-left mt-3">
                         <label for="titulo">Titulo</label>
                         <input name="titulo" type="text" class="form-control" id="titulo" aria-describedby="tituloHelp"
-                            placeholder="Titulo do evento">
+                            placeholder="Titulo do evento" required>
                     </div>
                     <div class="form-group text-left">
                         <label for="local">Local</label>
-                        <input name="local" type="text" class="form-control" id="local" placeholder="Onde vai acontecer?">
+                        <input name="local" type="text" class="form-control" id="local" placeholder="Onde vai acontecer?" required>
                     </div>
                     <div class="form-group text-left">
                         <label for="endereco">Endereço</label>
-                        <input name="endereco" type="text" class="form-control" id="endereco" placeholder="Onde fica o local do evento?">
+                        <input name="endereco" type="text" class="form-control" id="endereco" placeholder="Onde fica o local do evento?" required>
                     </div>
                     <div class="row">
                         <div class="col">
                             <div class="form-group text-left">
                                 <label for="inicio">Hora de inicio</label>
-                                <input name="inicio" type="datetime-local" class="form-control" id="inicio">
+                                <input name="inicio" type="datetime-local" class="form-control" id="inicio" required>
                             </div>
                         </div>
                         <div class="col">
                             <div class="form-group text-left">
                                 <label for="fim">Hora de fim</label>
-                                <input name="fim" type="datetime-local" class="form-control" id="fim">
+                                <input name="fim" type="datetime-local" class="form-control" id="fim" required>
                             </div>
                         </div>
                     </div>
                     <button type="button" class="btn btn-primary mt-3" data-toggle="modal" data-target="#exampleModalCenter">
-                        Launch demo modal
+                        Adicionar participantes
                     </button>
                     <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered" role="document">
                         <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                            <h5 class="modal-title" id="exampleModalLongTitle">Adicionar Participantes</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                             </button>
@@ -69,8 +69,8 @@
                             <?php endforeach; ?>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Save changes</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="ClearBoxes()">Cancelar</button>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">Salvar</button>
                         </div>
                         </div>
                     </div>
