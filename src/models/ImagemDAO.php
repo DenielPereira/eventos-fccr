@@ -60,6 +60,8 @@ class ImagemDAO {
             VALUES ('$idfoto', '$Eventos_id', '$Usuario_id')";
             $this->_conexaoDB->exec($sql2);
 
+        header('Location: ./../../views/checkins.php');
+
     } catch(PDOException $e) {
         echo "Falha: {$e}";
     }
