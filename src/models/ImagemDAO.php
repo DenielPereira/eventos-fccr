@@ -56,28 +56,59 @@ class ImagemDAO {
             $idfoto = $this->lastId;
 
             // Fazendo INSERT na tabela Fotos_evento
-            $sql2= "INSERT INTO fotos_evento (fotos_id, Eventos_id, Usuario_id)
+            $sql= "INSERT INTO fotos_evento (fotos_id, Eventos_id, Usuario_id)
             VALUES ('$idfoto', '$Eventos_id', '$Usuario_id')";
-            $this->_conexaoDB->exec($sql2);
+            $this->_conexaoDB->exec($sql);
 
         header('Location: ./../../views/checkins.php');
 
-    } catch(PDOException $e) {
+        } catch(PDOException $e) {
         echo "Falha: {$e}";
-    }
-} 
+        }
 
-public function getimagemByEvento($id) {
-    try {
-        $sql = "SELECT eventos_id, imagem, usuario_id, usuario.nome, usuario.sexo, contador FROM imagem
-        JOIN usuario ON imagem.usuario_id = usuario.id WHERE eventos_id = '$id' ORDER BY contador DESC";
-        $result = $this->_conexaoDB->query($sql);
-        $rows = $result->fetchAll();
-        if($rows) {
-            return $rows;
-        } 
-    } catch(PDOException $e) {
-        echo "Falha: {$e}";
+    } 
+
+    public function getImageByEvento($imagem) {
+        try {
+
+            $id = (int) $_GET['id'];
+
+            $nome         = $imagem->getNome();
+            $conteudo     = $imagem->getConteudo();
+            $Eventos_id   = $imagem->getEventos_id();
+            $Usuario_id   = $imagem->getUsuarioId();
+  
+            // Selecionando fotos
+            $stmt = $this->_conexaoDB->prepare('SELECT conteudo FROM fotos f JOIN fotos_evento fe ON f.id=fe.fotos_id WHERE fe.Eventos_id=5');
+            $stmt->bindParam(':Eventos_id', $Eventos_id, PDO::PARAM_INT);
+            
+                // Se executado
+                if ($stmt->execute()){
+
+                // Alocando foto
+                    $foto = $stmt->fetchObject();
+                
+                // Se existir
+                if ($foto != null){
+
+                    // Definindo tipo do retorno
+                    header('Content-Type: image/png');
+                    
+                    // Retornando conteudo
+                    echo $foto->conteudo;
+                }
+            }
+
+                //$result = $this->_conexaoDB->query($sql);
+                //$rows = $result->fetchAll();
+                //if($rows) {
+                //    return $rows;
+                //} 
+
+        } catch(PDOException $e) {
+             echo "Falha: {$e}";
+        }
+
     }
-}
+
 }

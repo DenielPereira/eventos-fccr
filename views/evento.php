@@ -1,10 +1,14 @@
 <?php
+    ini_set('display_errors', 1);
     error_reporting(E_ERROR);
+
     session_start(); 
     if(!$_SESSION['logged']) header('Location: ./index.php');
 
     include_once("./../src/controllers/variables.php");
     include_once("./../src/controllers/evento.php");
+
+   // $imagens = $imagemDAO->getImageByEvento($imagem);
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -40,7 +44,7 @@
  
                         <div class="mySlides fadeInOut">
                             <div class="numbertext">1 / 3</div>
-                            <img src="./../upload/5/1/img_avatar.png" class="rounded mx-auto d-block" style="width:100%">                    
+                            <img src="" class="rounded mx-auto d-block" style="width:100%">                    
                             <div class="text">Caption Text</div>
                             </div>
                         </div>
