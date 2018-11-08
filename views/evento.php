@@ -7,9 +7,8 @@
 
     include_once("./../src/controllers/variables.php");
     include_once("./../src/controllers/evento.php");
-
-   // $imagens = $imagemDAO->getImageByEvento($imagem);
 ?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>

@@ -17,7 +17,7 @@ $imagemDAO     = new ImagemDAO($db);
 $evento        = $eventoDAO->getEvento($_GET['id']);
 $registro      = $eventoDAO->getParticipante($_SESSION['id'], $_GET['id']);
 $comentarios   = $comentarioDAO->getComentarioByEvento($_GET['id']);
-$imagens       = $imagemDAO->getImageByEvento($imagem);
+$imagens       = $imagemDAO->getImageByEvento($_GET['id']);
 
 
 $_SESSION['idEvento'] = $_GET['id'];

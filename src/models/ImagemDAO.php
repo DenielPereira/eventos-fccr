@@ -68,19 +68,13 @@ class ImagemDAO {
 
     } 
 
-    public function getImageByEvento($imagem) {
+    public function getImageByEvento($idEvent) {
         try {
-
-            $id = (int) $_GET['id'];
-
-            $nome         = $imagem->getNome();
-            $conteudo     = $imagem->getConteudo();
-            $Eventos_id   = $imagem->getEventos_id();
-            $Usuario_id   = $imagem->getUsuarioId();
   
             // Selecionando fotos
-            $stmt = $this->_conexaoDB->prepare('SELECT conteudo FROM fotos f JOIN fotos_evento fe ON f.id=fe.fotos_id WHERE fe.Eventos_id=5');
-            $stmt->bindParam(':Eventos_id', $Eventos_id, PDO::PARAM_INT);
+            $stmt = $this->_conexaoDB->prepare('SELECT conteudo FROM fotos 
+            JOIN fotos_evento ON fotos.id=fotos_evento.fotos_id WHERE fotos_evento.Eventos_id = :Eventos_id');
+            $stmt->bindParam(':Eventos_id', $idEvent, PDO::PARAM_INT);
             
                 // Se executado
                 if ($stmt->execute()){
