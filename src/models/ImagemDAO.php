@@ -105,4 +105,10 @@ class ImagemDAO {
 
     }
 
+    public function insertTable($file_path){
+        $sql = "INSERT INTO fotos (nome) VALUES ($file_path)";
+        $resultado = $this->_conexaoDB->exec($sql);
+        
+    }
+
 }
