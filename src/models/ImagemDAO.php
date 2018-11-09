@@ -100,26 +100,36 @@ class ImagemDAO {
     }
 
     public function insertTable($file_path, $eventoID, $usuarioID){
-        $sql = "INSERT INTO fotos (nome) VALUES ('$file_path')";
-        $resultado = $this->_conexaoDB->exec($sql);
+        try {     
+            $sql = "INSERT INTO fotos (nome) VALUES ('$file_path')";
+            $resultado = $this->_conexaoDB->exec($sql);
 
-        $this->lastId = $this->_conexaoDB->lastInsertId();
-        $ultimoiddeverdade = $this->lastId;
+            $this->lastId = $this->_conexaoDB->lastInsertId();
+            $ultimoiddeverdade = $this->lastId;
 
-        $sql2 = "INSERT INTO fotos_evento (fotos_id, Eventos_id, Usuario_id) 
-        VALUES ('$ultimoiddeverdade', '$eventoID', '$usuarioID')";
-        $resultado2 = $this->_conexaoDB->exec($sql2);
+            $sql2 = "INSERT INTO fotos_evento (fotos_id, Eventos_id, Usuario_id) 
+                VALUES ('$ultimoiddeverdade', '$eventoID', '$usuarioID')";
+            $resultado2 = $this->_conexaoDB->exec($sql2);
+        
+        } catch(PDOException $e) {
+            echo "Falha: {$e->getMessage()}";
+        }
     }
 
     public function selectTable($eventoID){
-        $sql = "SELECT nome FROM fotos 
-        JOIN fotos_evento ON fotos.id=fotos_evento.fotos_id WHERE fotos_evento.Eventos_id = '$eventoID'";
+        try {
+            $sql = "SELECT nome FROM fotos 
+            JOIN fotos_evento ON fotos.id=fotos_evento.fotos_id WHERE fotos_evento.Eventos_id = '$eventoID'";
 
-        $resultado = $this->_conexaoDB->query($sql);
-        $rows = $resultado->fetchAll();
-            if($rows) {
-                return $rows;
-            } 
+            $resultado = $this->_conexaoDB->query($sql);
+            $rows = $resultado->fetchAll();
+                if($rows) {
+                    return $rows;
+            }
+        
+        } catch(PDOException $e) {
+            echo "Falha: {$e->getMessage()}";
+        }  
     }
 
 }
