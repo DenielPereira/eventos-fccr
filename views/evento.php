@@ -40,13 +40,14 @@
             <div class="col-lg-6 border-right">
                 <div class="text-center mb-3">
                     <div class="slideshow-container">
- 
+                        <?php foreach($imagens as $imagem): ?>
                         <div class="mySlides fadeInOut">
                             <div class="numbertext">1 / 3</div>
-                            <img src="" class="rounded mx-auto d-block" style="width:100%">                    
+                            <img src="<? echo $imagem[nome] ?>" class="rounded mx-auto d-block" style="width:100%">                    
                             <div class="text">Caption Text</div>
                             </div>
                         </div>
+                        <?php endforeach; ?>
                         <div class="text-left">
                             <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
                             <a class="next" onclick="plusSlides(1)">&#10095;</a>

@@ -49,7 +49,7 @@ $imagemDAO = new ImagemDAO($db);
         }else{
           move_uploaded_file($file_tmp,"../../upload/".$evento."/".$usuario."/".$file_name);
           echo "Success";
-          $imagemDAO->insertTable($file_path);
+          $imagemDAO->insertTable($file_path, $evento, $usuario);
         }
       }else{
             print_r($errors);
