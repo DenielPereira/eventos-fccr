@@ -66,11 +66,11 @@ class ImagemDAO {
                         if ($upload) {
                             $imagemDAO->insertTable($file_path, $evento, $usuario);
                         }
-            }
+                    }
             
-            } else {
+                } else {
                 print_r($errors);
-      }
+                }
             }
 
         } catch(PDOException $e) {
