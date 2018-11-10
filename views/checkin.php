@@ -27,7 +27,7 @@
                         <label class="label">
                             <i class="fas fa-images"></i>
                             <span class="title">Adicionar Fotos</span>
-                            <form action="../src/controllers/uploadImages_ftp.php?id=<?php echo $parteurl[1] ?>" method="POST" enctype="multipart/form-data">
+                            <form action="../src/controllers/uploadImages.php?id=<?php echo $parteurl[1] ?>" method="POST" enctype="multipart/form-data">
                                 <input type="file" name="arquivo" accept="image/png, image/jpeg" required multiple/>
                                 <input type="submit" name="enviar" value="Enviar" />
                             </form>

@@ -4,6 +4,7 @@ class Imagem {
 
     private $nome;
     private $conteudo;
+    private $arquivo;
     private $fotos_id;
     private $Eventos_id;
     private $Usuario_id;
@@ -15,6 +16,10 @@ class Imagem {
 
     public function getConteudo() {
         return $this->conteudo;
+    }
+
+    public function getArquivo() {
+        return $this->arquivo;
     }
 
     public function getfotosID() {
@@ -37,6 +42,10 @@ class Imagem {
 
     public function setConteudo($id) {
         $this->conteudo = $id;
+    }
+
+    public function setArquivo($arquivo) {
+        $this->arquivo = $arquivo;
     }
 
     public function setfotosID($id) {
