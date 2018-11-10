@@ -46,25 +46,25 @@ class ImagemDAO {
                 }
         
                 if($file_size > 2097152) {
-                    $errors[]='File size must be excately 2 MB';
+                    $errors[]='Erro! O tamanho da imagem deve ser menor do que 2 MB';
                 } 
         
       
                 if(empty($errors)==true) {
-        
                     $file_name = $file_name.$evento."-".$usuario;
                     $file_path = $path."/".$file_name;
-        
+              
                     if(file_exists($file_path)){
                         echo "<script>alert('Uma imagem com este nome já foi cadastrada por você neste evento! Mude o nome da imagem.');</script>";
                         echo "<script>window.location.href = './../../views/checkin.php?id=".$evento."';</script>";
         
                     } else {
                         $upload = move_uploaded_file($file_tmp,"../../upload/".$evento."/".$usuario."/".$file_name);
-                        echo "Success";
-            
+                        
                         if ($upload) {
                             $imagemDAO->insertTable($file_path, $evento, $usuario);
+                            echo "<script>alert('A imagem foi cadastrada com sucesso!');</script>";
+                            echo "<script>window.location.href = './../../views/evento.php?id=".$evento."';</script>";
                         }
                     }
             
@@ -79,37 +79,6 @@ class ImagemDAO {
 
     } 
 
-    public function getImageByEvento($idEvent) {
-        try {
-  
-            // Selecionando fotos
-            $stmt = $this->_conexaoDB->prepare('SELECT conteudo FROM fotos 
-            JOIN fotos_evento ON fotos.id=fotos_evento.fotos_id WHERE fotos_evento.Eventos_id = :Eventos_id');
-            $stmt->bindParam(':Eventos_id', $idEvent, PDO::PARAM_INT);
-            
-                // Se executado
-                if ($stmt->execute()){
-
-                // Alocando foto
-                    $foto = $stmt->fetchObject();
-                
-                // Se existir
-                if ($foto != null){
-
-                    // Definindo tipo do retorno
-                    header('Content-Type: image/png');
-                    
-                    // Retornando conteudo
-                    echo $foto->conteudo;
-                }
-            }
-
-        } catch(PDOException $e) {
-             echo "Falha: {$e}";
-        }
-
-    }
-
     public function insertTable($file_path, $eventoID, $usuarioID){
         try {     
             $sql = "INSERT INTO fotos (nome) VALUES ('$file_path')";
@@ -119,9 +88,9 @@ class ImagemDAO {
             $fotoID = $this->lastId;
 
             if ($resultado) {
-            $sql2 = "INSERT INTO fotos_evento (fotos_id, Eventos_id, Usuario_id) 
-                VALUES ('$fotoID', '$eventoID', '$usuarioID')";
-            $resultado2 = $this->_conexaoDB->exec($sql2);
+                $sql2 = "INSERT INTO fotos_evento (fotos_id, Eventos_id, Usuario_id) 
+                    VALUES ('$fotoID', '$eventoID', '$usuarioID')";
+                $resultado2 = $this->_conexaoDB->exec($sql2);
             }
 
         } catch(PDOException $e) {
