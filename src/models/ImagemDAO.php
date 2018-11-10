@@ -105,12 +105,14 @@ class ImagemDAO {
             $resultado = $this->_conexaoDB->exec($sql);
 
             $this->lastId = $this->_conexaoDB->lastInsertId();
-            $ultimoiddeverdade = $this->lastId;
+            $fotoID = $this->lastId;
 
+            if ($resultado) {
             $sql2 = "INSERT INTO fotos_evento (fotos_id, Eventos_id, Usuario_id) 
-                VALUES ('$ultimoiddeverdade', '$eventoID', '$usuarioID')";
+                VALUES ('$fotoID', '$eventoID', '$usuarioID')";
             $resultado2 = $this->_conexaoDB->exec($sql2);
-        
+            }
+
         } catch(PDOException $e) {
             echo "Falha: {$e->getMessage()}";
         }
@@ -122,9 +124,10 @@ class ImagemDAO {
             JOIN fotos_evento ON fotos.id=fotos_evento.fotos_id WHERE fotos_evento.Eventos_id = '$eventoID'";
 
             $resultado = $this->_conexaoDB->query($sql);
+            
             $rows = $resultado->fetchAll();
-                if($rows) {
-                    return $rows;
+            if($rows) {
+                return $rows;
             }
         
         } catch(PDOException $e) {

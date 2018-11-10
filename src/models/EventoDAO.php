@@ -35,7 +35,8 @@ class EventoDAO {
 
     public function getEvento($id) {
         try {
-            $sql = "SELECT titulo, endereco, local, DATE_FORMAT(eventos.inicio, '%d/%m/%Y às %H:%ih') as inicio , fim FROM eventos WHERE id = '$id'";
+            $sql = "SELECT titulo, endereco, local, DATE_FORMAT(eventos.inicio, '%d/%m/%Y às %H:%ih') as inicio, fim 
+            FROM eventos WHERE id = '$id'";
             $result = $this->_conexaoDB->query($sql);
             $rows = $result->fetchAll();
             if($rows) {
@@ -111,7 +112,9 @@ class EventoDAO {
 
     public function getParticipante($idUsuario, $idEvento){
         try{
-            $sql = "SELECT eventos_id, usuario_id FROM participantes WHERE eventos_id = '$idEvento' AND usuario_id = '$idUsuario'";
+            $sql = "SELECT eventos_id, usuario_id FROM participantes 
+            WHERE eventos_id = '$idEvento' AND usuario_id = '$idUsuario'";
+            
             $result = $this->_conexaoDB->query($sql);
             $rows = $result->fetchAll();
 
