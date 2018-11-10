@@ -42,16 +42,23 @@ $imagemDAO = new ImagemDAO($db);
         
       
       if(empty($errors)==true) {
+        
         $file_name = $file_name.$evento."-".$usuario;
         $file_path = $path."/".$file_name;
+        
         if(file_exists($file_path)){
-          echo "ja tem buceta!";
-        }else{
-          move_uploaded_file($file_tmp,"../../upload/".$evento."/".$usuario."/".$file_name);
+          echo "<script>alert('Uma imagem com este nome já foi cadastrada por você neste evento! Mude o nome da imagem.');</script>";
+          echo "<script>window.location.href = './../../views/checkin.php?id=".$evento."';</script>";
+        
+        } else {
+          $upload = move_uploaded_file($file_tmp,"../../upload/".$evento."/".$usuario."/".$file_name);
           echo "Success";
-          $imagemDAO->insertTable($file_path, $evento, $usuario);
+            
+            if ($upload) {
+              $imagemDAO->insertTable($file_path, $evento, $usuario);
+          }
         }
-      }else{
+      } else{
             print_r($errors);
       }
     }
