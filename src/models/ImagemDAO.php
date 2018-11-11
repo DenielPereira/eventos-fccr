@@ -26,14 +26,13 @@ class ImagemDAO {
             if(isset($arquivo)){
                 
                 $errors = null;
-                $file_name = $_FILES['arquivo']['name'];
-                $file_size = $_FILES['arquivo']['size'];
-                $file_tmp = $_FILES['arquivo']['tmp_name'];
-                $file_type = $_FILES['arquivo']['type'];
-                $file_ext = strtolower(end(explode('.',$_FILES['arquivo']['name'])));  
-                $file_new_name = (explode('.',$_FILES['arquivo']['name']));         
+                $file_name      = $imagem->getNome();
+                $file_size      = $imagem->getTamanho();
+                $file_tmp       = $imagem->getConteudo();
+                $file_type      = $imagem->getTipo();
+                $file_ext       = strtolower(end(explode('.',$file_name)));  
+                $file_new_name  = (explode('.',$file_name));         
                 
-                $evento = $_GET['id'];
                 $usuario = $_SESSION['id'];
                 $file_name = $file_new_name[0];
                 
