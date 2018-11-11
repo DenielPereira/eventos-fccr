@@ -3,6 +3,7 @@
     if(!$_SESSION['logged']) header('Location: ./index.php');
 
     include_once("./../src/controllers/variables.php");
+    include_once("./../src/controllers/relatorios.php");
 ?>
 <!DOCTYPE html>
 <html>
@@ -40,21 +41,21 @@
         <div class="card text-center">
             <div class="card-body">
                 <p class="card-title text-muted">Você tem</p>
-                <h3 class="card-text color-green">5</h3>
+                <h3 class="card-text color-green"><? echo $cont; ?></h3>
                 <p class="card-text">Eventos delegados pra você.</p>
             </div>
         </div>
         <div class="card text-center">
             <div class="card-body">
                 <p class="card-title text-muted">Você fez</p>
-                <h3 class="card-text color-green">6</h3>
+                <h3 class="card-text color-green"><? echo $cont2; ?></h3>
                 <p class="card-text">Check-ins em eventos.</p>
             </div>
         </div>
         <div class="card text-center">
             <div class="card-body">
                 <p class="card-title text-muted">Você comentou em</p>
-                <h3 class="card-text color-green">4</h3>
+                <h3 class="card-text color-green"><? echo $cont3; ?></h3>
                 <p class="card-text">Eventos diferentes.</p>
             </div>
         </div>

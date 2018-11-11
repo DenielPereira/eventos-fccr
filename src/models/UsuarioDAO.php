@@ -158,6 +158,53 @@ class UsuarioDAO {
                 echo "Falha: {$e->getMessage()}";
                     }
                 } 
-            }
+    
+    public function contadorEventos(){
+        try {
+            $sql = "SELECT COUNT(*) as contador FROM permissao WHERE Usuario_id = '$_SESSION[id]'";
+            $result = $this->_conexaoDB->query($sql);
+            $numero = $result->fetch();
+
+            $contagem = $numero['contador'];
+
+            return $contagem;
+        } catch(PDOException $e) {
+                echo "Falha: {$e->getMessage()}";
+        }
+        
+    }
+
+    public function contadorCheckin(){
+        try {
+            $sql = "SELECT COUNT(*) as contador FROM participantes WHERE Usuario_id = '$_SESSION[id]'";
+            $result = $this->_conexaoDB->query($sql);
+            $numero = $result->fetch();
+
+            $contagem = $numero['contador'];
+
+            return $contagem;
+
+        } catch(PDOException $e){
+                echo "Falha: {$e->getMessage()}";
+        }
+    }
+
+    public function contadorComentario(){
+        try {
+            $sql = "SELECT COUNT(*) as contador FROM comentario WHERE Usuario_id = '$_SESSION[id]'";
+            $result = $this->_conexaoDB->query($sql);
+            $numero = $result->fetch();
+
+            $contagem = $numero['contador'];
+
+            return $contagem;
+
+        } catch(PDOException $e) {
+                echo "Falha: {$e->getMessage()}";
+        }
+
+    }
+
+}
 
 
