@@ -28,30 +28,32 @@
 
                 ?>
             </h1>
-            <!-- TODO: colocar mais mensagens bonitinhas pq sim -->
-            <p class="lead">Espero que o seu dia esteja sendo bom :)</p>
+            <p class="lead"><? echo $frases[$aleatorio]; ?></p>
         </div>
     </div>
     <hr>
-    <!-- Abaixo pretendo colocar alguns relatorios rapidos -->
+    <div class="text-center">
+        <p class="lead">Aqui estão algumas informações que achamos ser importantes:</p>
+    </div>
+    <!-- TODO: Abaixo pretendo colocar alguns relatorios rapidos -->
     <div class="card-deck mt-5 mx-5">
         <div class="card text-center">
             <div class="card-body">
-                <p class="card-title text-muted">Voce tem</p>
+                <p class="card-title text-muted">Você tem</p>
                 <h3 class="card-text color-green">5</h3>
                 <p class="card-text">Eventos delegados pra você.</p>
             </div>
         </div>
         <div class="card text-center">
             <div class="card-body">
-                <p class="card-title text-muted">Voce fez</p>
+                <p class="card-title text-muted">Você fez</p>
                 <h3 class="card-text color-green">6</h3>
                 <p class="card-text">Check-ins em eventos.</p>
             </div>
         </div>
         <div class="card text-center">
             <div class="card-body">
-                <p class="card-title text-muted">Voce comentou em</p>
+                <p class="card-title text-muted">Você comentou em</p>
                 <h3 class="card-text color-green">4</h3>
                 <p class="card-text">Eventos diferentes.</p>
             </div>
