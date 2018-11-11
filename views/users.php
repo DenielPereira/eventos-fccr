@@ -21,6 +21,7 @@
             <p class="lead">Aqui estão todos os usuários cadastrados no sistema.</p>
         </div>
     </div>
+    <hr style="width: 90%;">
     <div class="text-right mr-5 mb-2">
         <a href="./../views/cadastro.php">Adicionar novo usuário</a>
     </div>

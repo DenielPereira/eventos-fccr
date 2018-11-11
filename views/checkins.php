@@ -18,6 +18,7 @@
             <p class="lead">Aqui você vai encontrar os eventos que você deu check-in.</p>
         </div>
     </div>
+    <hr style="width: 90%;">
     <div class="px-5 mt-auto">       
                 <table class="table table-hover">
                 <thead>

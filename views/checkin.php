@@ -20,6 +20,7 @@
             <p class="lead">Aqui você pode contribuir com as outras pessoas comentando sobre esse evento e adicionando fotos!</p>
         </div>
     </div>
+     <hr style="width: 90%;">
     <div class="row">
             <div class="col-lg-6 border-right">
                 <div class="text-center mb-3 ml-6">

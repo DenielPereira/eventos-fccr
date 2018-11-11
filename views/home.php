@@ -13,9 +13,10 @@
 
 <body>
     <?php include './partials/navbar.php';?>
-    <div class="jumbotron jumbotron-fluid">
+    <div class="jumbotron jumbotron-fluid welcome">
         <div class="container">
-            <h1 class="display-4">
+
+            <h1 class="display-4 mb-4">
                 <?php 
 
                 if($_SESSION['sexo'] == 'm' || $_SESSION['sexo'] == 'M'){
@@ -23,37 +24,36 @@
                 }else{
                     echo $woman;
                 }
-                    echo $name; 
+                    echo "<b class="."name".">$name</b> "; 
 
-                ?>.
+                ?>
             </h1>
-            <p class="lead">Essa é a sua home page, e abaixo estão as ações que você pode realizar.</p>
+            <!-- TODO: colocar mais mensagens bonitinhas pq sim -->
+            <p class="lead">Espero que o seu dia esteja sendo bom :)</p>
         </div>
     </div>
+    <hr>
+    <!-- Abaixo pretendo colocar alguns relatorios rapidos -->
     <div class="card-deck mt-5 mx-5">
-        <div class="card">
+        <div class="card text-center">
             <div class="card-body">
-                <h5 class="card-title">Participar de eventos</h5>
-                <p class="card-text">Quando os eventos forem sendo criados, você poderá escolher os eventos que você
-                    está participando, clicando neles na lista de eventos!</p>
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                <p class="card-title text-muted">Voce tem</p>
+                <h3 class="card-text color-green">5</h3>
+                <p class="card-text">Eventos delegados pra você.</p>
             </div>
         </div>
-        <div class="card">
+        <div class="card text-center">
             <div class="card-body">
-                <h5 class="card-title">Dar check-in</h5>
-                <p class="card-text">Você pode dar check-in nos eventos quando eles começarem.</p>
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                <p class="card-title text-muted">Voce fez</p>
+                <h3 class="card-text color-green">6</h3>
+                <p class="card-text">Check-ins em eventos.</p>
             </div>
         </div>
-        <div class="card">
+        <div class="card text-center">
             <div class="card-body">
-                <h5 class="card-title">Comentar</h5>
-                <p class="card-text">
-                    Colabore com os outros produtores escrevendo suas observações sobre o evento. Assim eles vão saber
-                    como melhorar no futuro. Você pode até colocar fotos!
-                </p>
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                <p class="card-title text-muted">Voce comentou em</p>
+                <h3 class="card-text color-green">4</h3>
+                <p class="card-text">Eventos diferentes.</p>
             </div>
         </div>
     </div>

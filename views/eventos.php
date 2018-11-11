@@ -18,7 +18,7 @@
             <p class="lead">Esses são os eventos que estão acontecendo.</p>
         </div>
     </div>
-
+    <hr style="width: 90%;">
     <?php if($_SESSION['admin'] == 1): ?> 
         <div class="text-right mr-5 mb-2">
             <a href="./../views/cadastro-eventos.php">Adicionar evento</a>

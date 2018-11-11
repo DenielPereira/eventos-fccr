@@ -1,6 +1,6 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-success">
+<nav class="navbar navbar-expand-lg navbar-light navbar-bg">
     <a class="navbar-brand" href="http://fccr.sp.gov.br" target="_blank">
-       <img src="../img/fccr_horizontal_white.png" width="150">
+       <img src="../img/fccr_horizontal.png" width="150">
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -27,7 +27,7 @@
 
             <? endif; ?>
         </ul>
-        <div class="profile form-inline">
+        <div class="profile form-inline color-green">
             <div class="dropdown">
                 <button class="btn btn-link dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false">
