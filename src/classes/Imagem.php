@@ -5,6 +5,8 @@ class Imagem {
     private $nome;
     private $conteudo;
     private $arquivo;
+    private $tamanho;
+    private $tipo;
     private $fotos_id;
     private $Eventos_id;
     private $Usuario_id;
@@ -20,6 +22,14 @@ class Imagem {
 
     public function getArquivo() {
         return $this->arquivo;
+    }
+
+    public function getTamanho() {
+        return $this->tamanho;
+    }
+
+    public function getTipo() {
+        return $this->tipo;
     }
 
     public function getfotosID() {
@@ -46,6 +56,14 @@ class Imagem {
 
     public function setArquivo($arquivo) {
         $this->arquivo = $arquivo;
+    }
+
+    public function setTamanho($tamanho) {
+        $this->tamanho = $tamanho;
+    }
+
+    public function setTipo($tipo) {
+        $this->tipo = $tipo;
     }
 
     public function setfotosID($id) {
