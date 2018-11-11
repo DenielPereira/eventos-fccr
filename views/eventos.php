@@ -15,7 +15,7 @@
      <div class="jumbotron jumbotron-fluid">
         <div class="container">
             <h1 class="display-4">Eventos</h1>
-            <p class="lead">Esses são os eventos que estão acontecendo.</p>
+            <p class="lead">Esses são os eventos que você pode fazer checkin.</p>
         </div>
     </div>
 

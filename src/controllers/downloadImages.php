@@ -15,4 +15,4 @@ $imagem->setConteudo($_FILES['arquivo']);
 $imagem->setEventos_id($_GET['id']);
 $imagem->setUsuarioId($_SESSION['id']);
 
-$imagemDAO->uploadImage($imagem);
+$imagemDAO->getImageByEvento($imagem);

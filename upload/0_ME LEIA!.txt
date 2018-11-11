@@ -1,0 +1,16 @@
+﻿Dentro dessa pasta você vai encontrar pastas com numeros. Mas o que significam esses numeros?
+Eis a resposta:
+
+/var/www/html/eventos/upload/evento/usuario/imagem
+
+Sendo que:
+
+As pastas dentro de '/var/www/html/eventos/upload' tem os id's dos eventos. Ou seja: Cada pasta é referente a um evento;
+
+As pastas dentro de '/var/www/html/eventos/upload/X' tem os id's dos usuários. Ou seja: Cada pasta é referente a um usuário;
+Destro das pastas referentes aos usuarios, tem as imagens que os mesmos adicionaram nos eventos.
+
+Viu? É simples!
+
+E FAÇA O FAVOR DE NÃO APAGAR NENHUMA IMAGEM DAQUI SEM APAGAR A REFERENCIA DO BANCO,
+SENAO VAI APARECER EM BRANCO NO SITE, OBRIGADO. 
