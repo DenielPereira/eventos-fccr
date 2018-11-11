@@ -3,7 +3,9 @@
     if(!$_SESSION['logged']) header('Location: ./index.php');
 
     include_once("./../src/controllers/variables.php");
-    include_once("./../src/controllers/evento.php");
+
+    $url = $_SERVER['REQUEST_URI'];
+    $parteurl = explode('=', $url);
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -25,7 +27,7 @@
                         <label class="label">
                             <i class="fas fa-images"></i>
                             <span class="title">Adicionar Fotos</span>
-                            <form action="../src/controllers/uploadImages_ftp.php?id=<?php echo $_GET[id] ?>" method="POST" enctype="multipart/form-data">
+                            <form action="../src/controllers/uploadImages.php?id=<?php echo $parteurl[1] ?>" method="POST" enctype="multipart/form-data">
                                 <input type="file" name="arquivo" accept="image/png, image/jpeg" required multiple/>
                                 <input type="submit" name="enviar" value="Enviar" />
                             </form>
