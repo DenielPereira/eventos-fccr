@@ -161,7 +161,9 @@ class UsuarioDAO {
     
     public function contadorEventos(){
         try {
-            $sql = "SELECT COUNT(*) as contador FROM permissao WHERE Usuario_id = '$_SESSION[id]'";
+            $sql = "SELECT COUNT(*) as contador FROM permissao 
+                    JOIN eventos ON permissao.Eventos_id = eventos.id 
+                    WHERE permissao.Usuario_id = '$_SESSION[id]' AND eventos.situacao = 0";
             $result = $this->_conexaoDB->query($sql);
             $numero = $result->fetch();
 
