@@ -37,7 +37,7 @@
                     <?php foreach($eventos as $rows): ?>
                     <tr>
                         <th scope="row"><?php echo $i+1; ?></th>
-                        <td><a href="./../views/checkin.php?id=<? echo $rows[0]; ?>"><?php echo $rows[1]; ?></a></td></td>
+                        <td><a href="./../views/checkin.php?id=<? echo $rows[0]; ?>"><?php echo $rows[1]; ?></a></td>
                         <td><?php echo $rows[2]; ?></td>
                         <td>
                             <?php
