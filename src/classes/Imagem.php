@@ -46,12 +46,12 @@ class Imagem {
 
 
     /* Setters */
-    public function setNome($id) {
-        $this->nome = $id;
+    public function setNome($nome) {
+        $this->nome = $nome;
     }
 
-    public function setConteudo($id) {
-        $this->conteudo = $id;
+    public function setConteudo($conteudo) {
+        $this->conteudo = $conteudo;
     }
 
     public function setArquivo($arquivo) {
