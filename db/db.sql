@@ -3,7 +3,7 @@
 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
-SET SQL_MODE='ALLOW_INVALID_DATES';
+
 -- -----------------------------------------------------
 -- Schema mydb
 -- -----------------------------------------------------
@@ -31,7 +31,7 @@ CREATE TABLE IF NOT EXISTS `eventos_fccr`.`usuario` (
   `admin_site` TINYINT(1) NULL DEFAULT NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB
-AUTO_INCREMENT = 5
+AUTO_INCREMENT = 9
 DEFAULT CHARACTER SET = utf8;
 
 
@@ -43,8 +43,8 @@ CREATE TABLE IF NOT EXISTS `eventos_fccr`.`eventos` (
   `titulo` VARCHAR(255) NOT NULL,
   `local` VARCHAR(255) NOT NULL,
   `endereco` VARCHAR(255) NOT NULL,
-  `inicio` TIMESTAMP NOT NULL,
-  `fim` TIMESTAMP NOT NULL,
+  `inicio` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `fim` TIMESTAMP NULL,
   `criador` INT(11) NOT NULL,
   `situacao` TINYINT(4) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
@@ -53,7 +53,7 @@ CREATE TABLE IF NOT EXISTS `eventos_fccr`.`eventos` (
     FOREIGN KEY (`criador`)
     REFERENCES `eventos_fccr`.`usuario` (`id`))
 ENGINE = InnoDB
-AUTO_INCREMENT = 5
+AUTO_INCREMENT = 8
 DEFAULT CHARACTER SET = utf8;
 
 
@@ -75,7 +75,7 @@ CREATE TABLE IF NOT EXISTS `eventos_fccr`.`comentario` (
     FOREIGN KEY (`Usuario_id`)
     REFERENCES `eventos_fccr`.`usuario` (`id`))
 ENGINE = InnoDB
-AUTO_INCREMENT = 6
+AUTO_INCREMENT = 8
 DEFAULT CHARACTER SET = utf8;
 
 
@@ -85,9 +85,10 @@ DEFAULT CHARACTER SET = utf8;
 CREATE TABLE IF NOT EXISTS `eventos_fccr`.`fotos` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
   `nome` VARCHAR(255) NOT NULL,
-  `conteudo` LONGBLOB NOT NULL,
+  `conteudo` LONGBLOB NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB
+AUTO_INCREMENT = 26
 DEFAULT CHARACTER SET = utf8;
 
 
@@ -98,7 +99,6 @@ CREATE TABLE IF NOT EXISTS `eventos_fccr`.`fotos_evento` (
   `fotos_id` INT(11) NOT NULL,
   `Eventos_id` INT(11) NOT NULL,
   `Usuario_id` INT(11) NOT NULL,
-  PRIMARY KEY (`fotos_id`, `Eventos_id`),
   INDEX `fk_fotos_has_Eventos_Eventos1_idx` (`Eventos_id` ASC),
   INDEX `fk_fotos_has_Eventos_fotos1_idx` (`fotos_id` ASC),
   INDEX `fk_fotos_evento_Usuario1_idx` (`Usuario_id` ASC),
@@ -158,4 +158,3 @@ DEFAULT CHARACTER SET = utf8;
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
-
