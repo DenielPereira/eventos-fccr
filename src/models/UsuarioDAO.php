@@ -191,7 +191,7 @@ class UsuarioDAO {
 
     public function contadorComentario(){
         try {
-            $sql = "SELECT COUNT(*) as contador FROM comentario WHERE Usuario_id = '$_SESSION[id]'";
+            $sql = "SELECT COUNT(DISTINCT Eventos_id) as contador FROM comentario WHERE Usuario_id = '$_SESSION[id]'";
             $result = $this->_conexaoDB->query($sql);
             $numero = $result->fetch();
 
