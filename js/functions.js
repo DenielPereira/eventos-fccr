@@ -46,3 +46,6 @@ function ClearBoxes() {
   inputs.attr('checked', false);
   inputs.prop('checked', false);
 }
+function opa(){
+  swal("Seus dados estão inválidos", "Tente novamente.", "error");
+}
