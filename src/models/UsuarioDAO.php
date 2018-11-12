@@ -216,22 +216,15 @@ class UsuarioDAO {
             $result = $this->_conexaoDB->exec($sql);
 
             if($result){
-            header('Location: ./../../views/users.php');
+                header('Location: ./../../views/users.php');
+            } else {
+                echo "Falha no processamento do banco de dados.";
             }
         } catch(PDOException $e){
                 echo "Falha: {$e->getMessage()}";
         }
     }
 
-    public function getUser($id){
-        try {
-            $sql = "SELECT * FROM usuario WHERE id = '$id'";
-            $result = $this->_conexaoDB->query($sql);
-
-        } catch(PDOException $e){
-                echo "Falha: {$e->getMessage()}";
-        }
-    }
 
 }
 
