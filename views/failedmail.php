@@ -10,20 +10,30 @@ $parteurl = explode('?', $url);
 <head>
     <?php include './partials/head.php';?>
 </head>
-<body class="bg-success">
-    <div class="block h-100">
-        <div class="card mx-auto" style="width: 40vw; margin-top: 10%">
-            <div class="card-body">
-                <h5 class="card-title text-danger">Eita! Algo de errado aconteceu.</h5>
-                <h6 class="card-subtitle mb-2 text-muted">O e-mail de recuperação não pôde ser enviado.</h6>
-                <h6 class="card-subtitle mb-2 text-muted small">Motivo: <? echo rawurldecode($parteurl[1]); ?></h6>
-                <p>Um relatório foi enviado para o administrador do sistema. <br>
-                Espera um pouquinho enquanto a gente resolve isso pra você ;)</p>    
-                <button class="btn btn-success" onclick="javascript:history.back()">Voltar</button>
-            </div>
-        </div>
-    </div>
+<body class="bg-white">
+<script>
+    window.onload = function() {
+        
+        swal({
+            title: "Opa! Você encontrou um erro!",
+            text: "O que aconteceu: <? echo rawurldecode($parteurl[1]); ?>",
+            icon: "error",
+            buttons: "Ai meu Deus, o que eu faço?",
+        }).then((value) => {
+            swal({
+                title: "Pode ficar tranquilão",
+                text: "Relaxa, um relatório desse erro foi enviado para a administração e a gente já está trabalhando pra resolver esse problema.",
+                icon: "success",
+                buttons: "Voltar",
+            }).then((value) => {
+                javascript:history.back();
+            });
+        });
+            
+    }
+    </script>
 </body>
+<?php include './partials/scripts.php';?>
 </html>
 
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 

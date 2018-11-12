@@ -46,8 +46,9 @@ class UsuarioDAO {
                 $_SESSION['logged']         = true;
                 header('Location: ./../../views/home.php'); 
             } else {
-                echo "<script>alert ('Seus dados estão inválidos, tente novamente!');</script>";
-                echo "<script>window.location.href = './../../views/index.php';</script>";
+                session_start();
+                $_SESSION['success'] = false;
+                header('Location: ./../../views/failedlogin.php');
             }
         } catch(PDOException $e) {
             echo "Falha: {$e->getMessage()}";

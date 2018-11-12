@@ -2,7 +2,7 @@ $(document).ready(function(){
   $('.navbar-nav .nav-item').click(function(){
       $('.navbar-nav .nav-item').removeClass('active');
       $(this).addClass('active');
-  })
+  });
 });
 
 var slideIndex = 1;
@@ -45,7 +45,4 @@ function ClearBoxes() {
 
   inputs.attr('checked', false);
   inputs.prop('checked', false);
-}
-function opa(){
-  swal("Seus dados estão inválidos", "Tente novamente.", "error");
 }

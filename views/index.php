@@ -25,14 +25,14 @@
                     <h4>Login</h4>
                     <div class="form-group text-left mt-5">
                         <label for="Email">Email</label>
-                        <input name="email" type="email" class="form-control" id="Email" aria-describedby="emailHelp" placeholder="nome.sobrenome@fccr.sp.gov.br">
+                        <input name="email" type="email" class="form-control" id="Email" aria-describedby="emailHelp" placeholder="nome.sobrenome@fccr.sp.gov.br" required>
                         <small id="emailHelp" class="form-text text-muted">
                             Não tem uma conta? Crie uma com o chefe do seu setor :)
                         </small>
                     </div>
                     <div class="form-group text-left">
                         <label for="Password">Senha</label>
-                        <input name="senha" type="password" class="form-control" id="Password" placeholder="Digite sua senha">
+                        <input name="senha" type="password" class="form-control" id="Password" placeholder="Digite sua senha" required>
                         <small id="emailHelp" class="form-text text-muted text-right">
                             <a href="../views/forgot-pass.php">Esqueceu a sua senha?</a>
                         </small>

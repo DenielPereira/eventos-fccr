@@ -22,7 +22,7 @@ $mail->Host = 'mail.fccr.sp.gov.br';
 $mail->SMTPAuth = true;
 $mail->SMTPSecure = 'tls';
 $mail->Username = 'eventos@fccr.sp.gov.br'; //conta do servidor de emails
-$mail->Password = 'fccr#20180'; //senha dessa conta
+$mail->Password = 'fccr#sjc@2018'; //senha dessa conta
 $mail->Port = 25;
 
 //configuração das contas 
