@@ -31,7 +31,7 @@ class UsuarioDAO {
     public function login($email, $senha) {
         try {
             $sql = "SELECT nome, sobrenome, email, sexo, nascimento, id, admin_site FROM usuario
-            WHERE email = '$email' AND senha = '$senha'";
+            WHERE email = '$email' AND senha = '$senha' AND situacao = 0";
             $result = $this->_conexaoDB->query($sql);
             $rows = $result->fetchAll();
             if($rows[0]) {
@@ -46,7 +46,6 @@ class UsuarioDAO {
                 $_SESSION['logged']         = true;
                 header('Location: ./../../views/home.php'); 
             } else {
-                session_start();
                 $_SESSION['success'] = false;
                 header('Location: ./../../views/failedlogin.php');
             }
@@ -57,7 +56,7 @@ class UsuarioDAO {
 
     public function getAllUsers() {
         try {
-            $sql = "SELECT id, nome, sobrenome, admin_site, email FROM usuario";
+            $sql = "SELECT id, nome, sobrenome, admin_site, email FROM usuario WHERE situacao = 0";
             $result = $this->_conexaoDB->query($sql);
             $rows = $result->fetchAll();
             if($rows) {
@@ -206,6 +205,32 @@ class UsuarioDAO {
                 echo "Falha: {$e->getMessage()}";
         }
 
+    }
+
+    public function deletarUsuario($usuario){
+        try {
+            session_start();
+            $situacao = $usuario->getSituacao();
+
+            $sql = "UPDATE usuario SET situacao = '$situacao' WHERE id = '$_SESSION[idAlt]'";
+            $result = $this->_conexaoDB->exec($sql);
+
+            if($result){
+            header('Location: ./../../views/users.php');
+            }
+        } catch(PDOException $e){
+                echo "Falha: {$e->getMessage()}";
+        }
+    }
+
+    public function getUser($id){
+        try {
+            $sql = "SELECT * FROM usuario WHERE id = '$id'";
+            $result = $this->_conexaoDB->query($sql);
+
+        } catch(PDOException $e){
+                echo "Falha: {$e->getMessage()}";
+        }
     }
 
 }

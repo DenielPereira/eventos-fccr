@@ -53,7 +53,7 @@
                                 <h6 class="dropdown-header">Ações</h6>
                                 <a class="dropdown-item" href="./../views/alterar-user.php?id=<?php echo $rows[0]; ?>">Alterar</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item text-danger" href="#">Excluir</a>
+                                <a class="dropdown-item text-danger" href="./../views/desativar-user.php?id=<?php echo $rows[0]; ?>">Excluir</a>
                             </div>
                         </div>
 

@@ -9,6 +9,7 @@ class Usuario {
     private $nascimento;
     private $sexo;
     private $admin;
+    private $situacao;
 
     /* Getters */
     public function getNome() {
@@ -39,6 +40,10 @@ class Usuario {
         return $this->admin;
     }
 
+    public function getSituacao() {
+        return $this->situacao;
+    }
+
     /* Setters */
     public function setNome($nome) {
         $this->nome = $nome;
@@ -66,6 +71,10 @@ class Usuario {
 
     public function setAdmin($admin) {
         $this->admin = $admin;
+    }
+
+    public function setSituacao($situacao) {
+        $this->situacao = $situacao;
     }
 
     /* Methods */
