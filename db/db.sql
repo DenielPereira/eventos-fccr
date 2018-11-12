@@ -29,6 +29,7 @@ CREATE TABLE IF NOT EXISTS `eventos_fccr`.`usuario` (
   `nascimento` DATE NOT NULL,
   `sexo` CHAR(1) NOT NULL,
   `admin_site` TINYINT(1) NULL DEFAULT NULL,
+  `situacao` TINYINT(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`))
 ENGINE = InnoDB
 AUTO_INCREMENT = 9
