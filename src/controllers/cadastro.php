@@ -19,5 +19,6 @@ $usuario->setSenha($_POST['senha']);
 $usuario->setNascimento($_POST['nascimento']);
 $usuario->setSexo($_POST['sexo']);
 $usuario->setAdmin($_POST['admin']);
+$usuario->setSituacao(0);
 
 $userDAO->create($usuario);

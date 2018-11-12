@@ -33,7 +33,7 @@
                 } else {
                     swal("O usuário está a salvo, ufa! :)")
                     .then((value) => {
-                        window.location.href='/views/eventos.php'
+                        window.location.href='/views/users.php'
                     });   
                 }
         });

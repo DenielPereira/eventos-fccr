@@ -18,9 +18,10 @@ class UsuarioDAO {
             $nascimento = $_usuario->getNascimento();
             $sexo       = $_usuario->getSexo();
             $admin      = $_usuario->getAdmin();
+            $situacao   = $_usuario->getSituacao();
 
-            $sql = "INSERT INTO usuario (nome, sobrenome, email, senha, nascimento, sexo, admin_site)
-                VALUES ('$nome', '$sobrenome', '$email', '$senha', '$nascimento', '$sexo','$admin')";
+            $sql = "INSERT INTO usuario (nome, sobrenome, email, senha, nascimento, sexo, admin_site, situacao)
+                VALUES ('$nome', '$sobrenome', '$email', '$senha', '$nascimento', '$sexo','$admin', '$situacao')";
             $this->_conexaoDB->exec($sql);
             header('Location: ./../../views/users.php');
         } catch(PDOException $e) {
