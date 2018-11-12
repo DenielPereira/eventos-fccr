@@ -1,6 +1,8 @@
 $(document).ready(function(){
-  $('.navbar-nav .nav-item').click(function(){
-      $('.navbar-nav .nav-item').removeClass('active');
+  var selector = '.nav li';
+
+  $(selector).on('click', function(){
+      $(selector).removeClass('active');
       $(this).addClass('active');
   });
 });
@@ -31,14 +33,6 @@ function showSlides(n) {
   slides[slideIndex-1].style.display = "block";  
   dots[slideIndex-1].className += " active";
 }
-
-/*
-function ClearBoxes() {
-  for (i = 0; i < document.forms.selecao.elements.length; i++)
-    if (document.forms.selecao.elements[i].type == "checkbox")
-      document.forms.selecao.elements[i].checked = false;
-}
-*/
 
 function ClearBoxes() {
   var inputs = $('input[type=checkbox]');

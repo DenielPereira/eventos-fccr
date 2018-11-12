@@ -14,6 +14,6 @@ $imagem->setNome($_FILES['arquivo']['name']);
 $imagem->setConteudo($_FILES['arquivo']['tmp_name']);
 $imagem->setArquivo($_FILES['arquivo']);
 $imagem->setTamanho($_FILES['arquivo']['size']);
-$imagem-setTipo($_FILES['arquivo']['type']);
+$imagem->setTipo($_FILES['arquivo']['type']);
 
 $imagemDAO->uploadImage($imagem, $imagemDAO, $_GET['id']);

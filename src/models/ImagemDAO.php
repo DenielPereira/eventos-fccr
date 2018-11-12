@@ -45,15 +45,11 @@ class ImagemDAO {
                 }
                 
                 if(in_array($file_ext,$expensions)=== false){
-                    $errors="Isso não se parece com uma imagem... 
-                    Apenas imagens podem ser enviadas.";
+                    $errors="2";
                 }
                 
                 if($file_size > 2097152) {
-                    $errors="A sua foto é muito grande! <br>
-                    Infelizmente arquivos com mais de 2MB não podem ser enviados :( <br> 
-                    Tente reduzir o tamanho da foto. <br> ";
-                    // Eu posso te indicar <a href="."https://www.easy-resize.com/pt/"." target="."_blank".">esse site</a>, mas você pode fazer do jeito que achar melhor :)";
+                    $errors="3";
                     exit;
                 } 
                 
@@ -62,19 +58,16 @@ class ImagemDAO {
                     $file_name = $file_name."(e".$evento."u".$usuario.")".".".$file_ext;
                     $file_path = $path."/".$file_name;
                     if(file_exists($file_path)){
-                        echo "<script>alert ('Parece que a gente já tem um arquivo com esse mesmo nome :(  Se você tiver certeza de que não é a mesma foto, tente enviar de novo com um nome diferente.');</script>";
-                        echo "<script>javascript:history.back()</script>";
+                        header('Location: ./../../views/warning.php?error=1');
                     }else{
                         $upload = move_uploaded_file($file_tmp,"../../upload/".$evento."/".$usuario."/".$file_name);
                         if ($upload) {
                             $imagemDAO->insertTable($file_path, $evento, $usuario);
-                            echo "<script>alert('A imagem foi cadastrada com sucesso!');</script>";
-                            echo "<script>javascript:history.back()</script>";
+                            header('Location: ./../../views/warning.php?success=1');
                         }
                     }
                 }else{
-                    echo "<script>alert ('".$errors."');</script>";
-                    echo "<script>javascript:history.back()</script>";
+                    header('Location: ./../../views/warning.php?error='.$errors);
                 }
             }
             
