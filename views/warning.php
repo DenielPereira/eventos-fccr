@@ -17,13 +17,13 @@ $parteurl = explode('?', $url);
         
             swal({
                 title: "Opa! Você encontrou um erro!",
-                text: "O que aconteceu: <? echo rawurldecode($parteurl[1]); ?>",
+                text: "Parece que a gente ja tem uma imagem com esse nome :(",
                 icon: "error",
                 buttons: "Ai meu Deus, o que eu faço?",
             }).then((value) => {
                 swal({
-                    title: "Pode ficar tranquilão",
-                    text: "Relaxa, um relatório desse erro foi enviado para a administração e a gente já está trabalhando pra resolver esse problema.",
+                    title: "É facil!",
+                    text: "Se você tiver certeza de que não é a mesma imagem, mude o nome dela e tente enviar de novo.",
                     icon: "success",
                     buttons: "Voltar",
                 }).then((value) => {
@@ -40,14 +40,14 @@ $parteurl = explode('?', $url);
         
             swal({
                 title: "Opa! Você encontrou um erro!",
-                text: "O que aconteceu: não é imagem<? echo rawurldecode($parteurl[1]); ?>",
+                text: "Parece que o arquivo que você enviou não é uma imagem.",
                 icon: "error",
-                buttons: "Ai meu Deus, o que eu faço?",
+                buttons: "E agora, o que eu faço?",
             }).then((value) => {
                 swal({
-                    title: "Pode ficar tranquilão",
-                    text: "Relaxa, um relatório desse erro foi enviado para a administração e a gente já está trabalhando pra resolver esse problema.",
-                    icon: "success",
+                    title: "Verifique",
+                    text: "Veja se o final do nome da sua imagem é: .jpg, .jpeg, .png; se não for, infelizmente você não poderá subir esse arquivo no sistema.",
+                    icon: "info",
                     buttons: "Voltar",
                 }).then((value) => {
                     javascript:history.back();
@@ -63,14 +63,14 @@ $parteurl = explode('?', $url);
         
             swal({
                 title: "Opa! Você encontrou um erro!",
-                text: "O que aconteceu: imagem grande <? echo rawurldecode($parteurl[1]); ?>",
+                text: "Essa imagem é muito grande :(",
                 icon: "error",
-                buttons: "Ai meu Deus, o que eu faço?",
+                buttons: "E agora, o que eu faço?",
             }).then((value) => {
                 swal({
-                    title: "Pode ficar tranquilão",
-                    text: "Relaxa, um relatório desse erro foi enviado para a administração e a gente já está trabalhando pra resolver esse problema.",
-                    icon: "success",
+                    title: "Diminua o tamanho",
+                    text: "Existem algumas ferramentas online que diminuem o tamanho das fotos. Procure alguma de sua preferencia e diminua o tamanho da imagem, depois, é só tentar de novo!",
+                    icon: "info",
                     buttons: "Voltar",
                 }).then((value) => {
                     javascript:history.back();
@@ -85,22 +85,15 @@ $parteurl = explode('?', $url);
         window.onload = function() {
         
             swal({
-                title: "Opa! Você encontrou um erro!",
-                text: "O que aconteceu: <? echo rawurldecode($parteurl[1]); ?>",
+                title: "A imagem foi enviada!",
+                text: "A gente já recebeu a sua imagem e adicionamos ela no evento.",
                 icon: "success",
-                buttons: "Ai meu Deus, o que eu faço?",
+                buttons: "Ok",
             }).then((value) => {
-                swal({
-                    title: "Pode ficar tranquilão",
-                    text: "Relaxa, um relatório desse erro foi enviado para a administração e a gente já está trabalhando pra resolver esse problema.",
-                    icon: "success",
-                    buttons: "Voltar",
-                }).then((value) => {
                     javascript:history.back();
             });
-        });
             
-    }
+        }
     </script>
     <?php endif; ?>
 </body>
