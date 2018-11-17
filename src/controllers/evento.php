@@ -19,5 +19,7 @@ $registro      = $eventoDAO->getParticipante($_SESSION['id'], $_GET['id']);
 $comentarios   = $comentarioDAO->getComentarioByEvento($_GET['id']);
 $imagens       = $imagemDAO->selectTable($_GET['id']);
 
+$eventoDAO->checarPermissao($_GET['id']);
+
 
 $_SESSION['idEvento'] = $_GET['id'];

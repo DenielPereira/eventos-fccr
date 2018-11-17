@@ -171,7 +171,28 @@ class EventoDAO {
             echo "Falha: {$e->getMessage()}";
         
         } 
+    }
+
+    public function checarPermissao($eventoID){
+        try {
+            $sql = "SELECT * FROM permissao WHERE Eventos_id = '$eventoID' AND Usuario_id = '$_SESSION[id]'";
+            $procura = $this->_conexaoDB->query($sql);
+            
+            $rows = $procura->fetchAll();
+
+            if($rows){
+                return $rows;
+            } else {
+                if ($_SESSION['admin'] == 1){
+                    return $rows;
+                }
+                header('Location: ./../../views/eventos.php');
+            }
+
+        } catch(PDOException $e) {
+
         }
+    }
     
 
 }
