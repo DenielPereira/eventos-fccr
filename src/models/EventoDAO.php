@@ -190,7 +190,7 @@ class EventoDAO {
             }
 
         } catch(PDOException $e) {
-
+            echo "Falha: {$e->getMessage()}";
         }
     }
     
